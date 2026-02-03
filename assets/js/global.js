@@ -1,70 +1,60 @@
 /**
  * GLOBAL.JS - Scripts Communs
  * Site: Mamadou Olele Diallo
- * Navigation SPA, Animations
+ * Menu Burger & Navigation
  */
 
 // ===== VARIABLES GLOBALES =====
 const header = document.getElementById('header');
 const mainNav = document.getElementById('mainNav');
 const menuBurger = document.getElementById('menuBurger');
-const navLinks = document.querySelectorAll('nav a');
-const sections = document.querySelectorAll('.section');
-
-// ===== NAVIGATION (liens vers pages HTML) =====
-function initNavigation() {
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            // Si le lien pointe vers une page HTML, laisser le navigateur gérer (pas d'interception)
-            const href = link.getAttribute('href');
-            if (href && (href.endsWith('.html') || href.startsWith('http'))) {
-                e.stopPropagation(); // Évite que le "clic dehors" ferme le menu et perturbe la navigation
-                return;
-            }
-            e.preventDefault();
-
-            const targetPage = link.getAttribute('data-page');
-            if (!targetPage) return;
-
-            // Retirer la classe active de tous les liens
-            navLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
-
-            // Masquer toutes les sections
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-
-            const targetSection = document.getElementById(targetPage);
-            if (targetSection) {
-                targetSection.classList.add('active');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-
-            if (mainNav.classList.contains('active')) {
-                mainNav.classList.remove('active');
-                menuBurger.classList.remove('active');
-            }
-        });
-    });
-}
 
 // ===== MENU BURGER (Mobile) =====
 function initMenuBurger() {
-    if (menuBurger) {
-        menuBurger.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
+    const body = document.body;
+    if (menuBurger && mainNav) {
+        menuBurger.addEventListener('click', (e) => {
+            e.stopPropagation();
             menuBurger.classList.toggle('active');
+            mainNav.classList.toggle('active');
+            body.classList.toggle('menu-open');
         });
-        
-        // Fermer le menu en cliquant en dehors
+
+        // Fermer le menu quand on clique sur un lien
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                setTimeout(() => {
+                    menuBurger.classList.remove('active');
+                    mainNav.classList.remove('active');
+                    body.classList.remove('menu-open');
+                }, 100);
+            });
+        });
+
+        // Fermer le menu si on clique en dehors
         document.addEventListener('click', (e) => {
             if (!mainNav.contains(e.target) && !menuBurger.contains(e.target)) {
-                mainNav.classList.remove('active');
                 menuBurger.classList.remove('active');
+                mainNav.classList.remove('active');
+                body.classList.remove('menu-open');
             }
         });
     }
+}
+
+// ===== SURBRILLANCE PAGE ACTIVE =====
+function initActivePage() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const links = document.querySelectorAll('#mainNav a');
+    links.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
 }
 
 // ===== HEADER SCROLL EFFECT =====
@@ -158,9 +148,10 @@ window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
         // Fermer le menu mobile si on passe en desktop
-        if (!isMobile() && mainNav.classList.contains('active')) {
+        if (mainNav && !isMobile() && mainNav.classList.contains('active')) {
             mainNav.classList.remove('active');
-            menuBurger.classList.remove('active');
+            if (menuBurger) menuBurger.classList.remove('active');
+            document.body.classList.remove('menu-open');
         }
     }, 250);
 });
@@ -211,9 +202,10 @@ function initLazyLoading() {
 function initKeyboardNavigation() {
     document.addEventListener('keydown', (e) => {
         // ESC pour fermer le menu mobile
-        if (e.key === 'Escape' && mainNav.classList.contains('active')) {
+        if (e.key === 'Escape' && mainNav && mainNav.classList.contains('active')) {
             mainNav.classList.remove('active');
-            menuBurger.classList.remove('active');
+            if (menuBurger) menuBurger.classList.remove('active');
+            document.body.classList.remove('menu-open');
         }
     });
 }
