@@ -1,0 +1,298 @@
+/* ===================================
+   CONTACT.CSS - Page Contact
+   Site: Olele Académie
+   =================================== */
+
+/* ===== HERO CONTACT ===== */
+.contact-hero {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+    padding: var(--spacing-xl) 5%;
+    padding-top: calc(80px + var(--spacing-lg));
+    margin-top: 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(37, 99, 235, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.contact-hero h1 {
+    color: var(--white);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    z-index: 1;
+}
+
+.contact-hero p {
+    color: var(--light);
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== SECTIONS COMMUNES ===== */
+.contact-section {
+    padding: var(--spacing-xl) 0;
+}
+
+.contact-section:nth-child(even) {
+    background: var(--light);
+}
+
+.contact-section:nth-child(odd) {
+    background: var(--white);
+}
+
+/* En-têtes de section */
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-header h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    line-height: 1.3;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.section-header h2 .highlight {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--gray);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ===== SECTION COORDONNÉES (3 CARDS) ===== */
+.coordonnees-section {
+    background: var(--white);
+}
+
+.coordonnees-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.coordonnee-card {
+    background: var(--white);
+    padding: 1.5rem 1rem;
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--gray-lighter);
+    text-align: center;
+    transition: all var(--transition-normal);
+}
+
+.coordonnee-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.coordonnee-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    transition: all var(--transition-normal);
+}
+
+.coordonnee-card:hover .coordonnee-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.coordonnee-icon i {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.coordonnee-card h3 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.coordonnee-card p {
+    color: var(--gray);
+    line-height: 1.6;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.coordonnee-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.7rem 1rem;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--white);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: all var(--transition-normal);
+    white-space: nowrap;
+}
+
+.coordonnee-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+/* ===== SECTION FORMULAIRE ===== */
+.formulaire-section {
+    background: var(--light);
+}
+
+.contact-form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--gray-lighter);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 0.9rem;
+    border: 2px solid var(--gray-lighter);
+    border-radius: 8px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    transition: all var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-submit {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    font-family: 'Outfit', sans-serif;
+}
+
+.form-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+}
+
+.form-submit:active {
+    transform: translateY(-1px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .coordonnees-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-hero {
+        min-height: 40vh;
+        padding: var(--spacing-lg) var(--spacing-md);
+        padding-top: calc(80px + var(--spacing-md));
+    }
+    
+    .contact-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .coordonnee-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .contact-form-container {
+        padding: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .coordonnee-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .coordonnee-icon i {
+        font-size: 1.8rem;
+    }
+}
