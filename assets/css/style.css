@@ -523,6 +523,47 @@
     transform: translateY(-5px) scale(1.05);
 }
 
+/* CTA Final - Responsive mobile */
+@media (max-width: 768px) {
+    .cta-final h2 {
+        font-size: 1.6rem;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+    }
+
+    .cta-final p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-final .btn {
+        padding: 1rem 1.5rem;
+        font-size: 0.95rem;
+        white-space: normal;
+        max-width: 280px;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-final h2 {
+        font-size: 1.4rem;
+        line-height: 1.3;
+    }
+
+    .cta-final p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .cta-final .btn {
+        padding: 0.9rem 1.2rem;
+        font-size: 0.9rem;
+        max-width: 260px;
+    }
+}
+
 /* ===== SOCIAL MEDIA SECTION ===== */
 .social-media-section {
     text-align: center;
@@ -605,11 +646,30 @@
         min-width: 280px;
         max-width: 280px;
     }
-    
+
+    /* Réduire espace entre "Mes Résultats" et "Pourquoi Olele Academy" */
+    .results-section {
+        padding-bottom: 2rem;
+    }
+
+    .why-me {
+        padding-top: 2rem;
+    }
+
+    /* Centrer cards "Pourquoi Olele Academy" sur mobile */
     .features-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 100%;
+        padding: 0 1.5rem;
+        margin: 0 auto;
     }
-    
+
+    .feature-card {
+        margin: 0 auto;
+        max-width: 500px;
+    }
+
     .social-platforms {
         flex-direction: column;
         align-items: stretch;
@@ -627,14 +687,18 @@
         width: 150px;
         height: 150px;
     }
-    
+
     .result-card {
         min-width: 260px;
         max-width: 260px;
     }
-    
+
     .result-image-container {
         height: 200px;
+    }
+
+    .features-grid {
+        padding: 0 1rem;
     }
 }
 
@@ -685,16 +749,23 @@
     padding: var(--spacing-md) 0;
 }
 
+/* ===== SLIDER RÉSULTATS (Témoignages) - Fluide + Centrage ===== */
 .testimonials-slider {
     display: flex;
-    gap: var(--spacing-md);
+    gap: var(--spacing-lg);
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    padding: var(--spacing-md) var(--spacing-lg);
-    scroll-padding-left: var(--spacing-lg);
+    scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0 5%;
+    padding-bottom: var(--spacing-md);
+    touch-action: pan-x;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    overscroll-behavior-x: contain;
 }
 
 .testimonials-slider::-webkit-scrollbar {
@@ -704,22 +775,24 @@
 /* Card Témoignage */
 .testimonial-card {
     min-width: 350px;
-    max-width: 350px;
-    height: auto;
-    scroll-snap-align: start;
+    flex-shrink: 0;
+    scroll-snap-align: center;
     background: var(--white);
     border-radius: var(--radius-lg);
     padding: var(--spacing-lg);
     box-shadow: var(--shadow-md);
+    border: 2px solid var(--gray-lighter);
     transition: all var(--transition-normal);
-    flex-shrink: 0;
     display: flex;
     flex-direction: column;
+    height: auto;
+    touch-action: auto;
 }
 
 .testimonial-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--gold);
 }
 
 .testimonial-content {
@@ -777,25 +850,62 @@
     margin-bottom: 0;
 }
 
-/* Responsive Témoignages */
+/* Responsive Mobile - Section "Ils nous font confiance" */
 @media (max-width: 768px) {
-    .testimonial-card {
-        min-width: 300px;
-        max-width: 300px;
+    /* Correction 1 : Réduire espace avant la section (entre "Pourquoi" et "Ils nous font confiance") */
+    .testimonials-section {
+        padding-top: 2rem;
+    }
+
+    /* Correction 2 : Réduire espace entre titre et slider */
+    .testimonials-header {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Correction 3 : Centrage cards slider - une card visible, snap au centre */
+    .testimonials-slider {
+        gap: 1rem;
+        padding: 0 1.5rem;
+        padding-bottom: 1rem;
+        scroll-padding: 1.5rem;
+        touch-action: pan-x;
+    }
+
+    .testimonial-card,
+    .testimonials-slider > * {
+        min-width: calc(100vw - 3rem);
+        max-width: calc(100vw - 3rem);
+        flex-shrink: 0;
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+        box-sizing: border-box;
+    }
+
+    .testimonial-card:first-child {
+        margin-left: 0;
     }
 }
 
 @media (max-width: 480px) {
+    .testimonials-slider {
+        padding: 0 1rem;
+        scroll-padding: 1rem;
+    }
+
+    .testimonial-card,
+    .testimonials-slider > * {
+        min-width: calc(100vw - 2rem);
+        max-width: calc(100vw - 2rem);
+    }
+
     .testimonial-card {
-        min-width: 280px;
-        max-width: 280px;
         padding: var(--spacing-md);
     }
-    
+
     .testimonial-text {
         font-size: 0.95rem;
     }
-    
+
     .quote-icon {
         font-size: 2rem;
     }
