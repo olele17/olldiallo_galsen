@@ -629,6 +629,7 @@ footer {
     }
     
     nav a:hover {
+        color: var(--white);
         transform: translateX(-5px);
         box-shadow: var(--shadow-md);
     }
