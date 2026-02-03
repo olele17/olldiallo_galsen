@@ -605,6 +605,7 @@ footer {
         border-left: 3px solid var(--gold);
         box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
         align-items: stretch;
+        z-index: 1002;
     }
     
     nav.active {
@@ -618,6 +619,9 @@ footer {
         border-radius: var(--radius-md);
         text-align: center;
         box-shadow: var(--shadow-sm);
+        cursor: pointer;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
     }
     
     nav a::after {

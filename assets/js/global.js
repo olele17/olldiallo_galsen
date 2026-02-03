@@ -18,6 +18,7 @@ function initNavigation() {
             // Si le lien pointe vers une page HTML, laisser le navigateur gérer (pas d'interception)
             const href = link.getAttribute('href');
             if (href && (href.endsWith('.html') || href.startsWith('http'))) {
+                e.stopPropagation(); // Évite que le "clic dehors" ferme le menu et perturbe la navigation
                 return;
             }
             e.preventDefault();
