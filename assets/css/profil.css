@@ -10,7 +10,10 @@
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
-    padding: var(--spacing-xl) 5%;
+    padding-top: calc(80px + var(--spacing-lg));
+    padding-bottom: var(--spacing-xl);
+    padding-left: 5%;
+    padding-right: 5%;
     margin-top: 0;
     text-align: center;
     position: relative;
@@ -156,7 +159,10 @@
 @media (max-width: 768px) {
     .profile-hero {
         min-height: 40vh;
-        padding: var(--spacing-lg) var(--spacing-md);
+        padding-top: calc(80px + var(--spacing-md));
+        padding-bottom: var(--spacing-lg);
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
     }
 
     .profile-hero h1 {
