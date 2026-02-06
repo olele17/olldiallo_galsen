@@ -1076,9 +1076,17 @@
     }
 
     .faq-section {
-        margin-top: 0.25rem;
+        margin-top: 0.5rem;
         padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0;
     }
+
+    .cta-final {
+        margin-top: 0;
+    }
+
+    /* Correction 2 : Réduire espace entre titre et slider */
 
     /* Correction 2 : Réduire espace entre titre et slider */
     .testimonials-header {
