@@ -637,10 +637,16 @@ footer {
         display: none;
     }
 
-    nav a:hover,
-    nav a.active {
+    nav a:hover {
         color: var(--gold);
         background: transparent;
+    }
+
+    /* Lien de la page actuelle visible quand le menu est ouvert */
+    nav.active a.active {
+        color: var(--gold);
+        font-weight: 700;
+        background: rgba(212, 175, 55, 0.12);
     }
 
     /* Afficher burger */
