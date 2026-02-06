@@ -1229,7 +1229,7 @@
     box-shadow: var(--shadow-md);
 }
 
-/* Question Button */
+/* Question Button - titre sur 2 lignes max */
 .faq-question {
     width: 100%;
     padding: var(--spacing-md) var(--spacing-lg);
@@ -1238,11 +1238,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
     cursor: pointer;
     text-align: left;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 700;
+    line-height: 1.3;
     color: var(--primary);
     transition: all var(--transition-fast);
 }
@@ -1253,6 +1254,7 @@
 
 .faq-question span {
     flex: 1;
+    min-width: 0;
 }
 
 /* Icône FAQ */
@@ -1291,7 +1293,8 @@
 @media (max-width: 768px) {
     .faq-question {
         padding: var(--spacing-sm) var(--spacing-md);
-        font-size: 1rem;
+        font-size: 0.95rem;
+        line-height: 1.3;
     }
     
     .faq-answer {
