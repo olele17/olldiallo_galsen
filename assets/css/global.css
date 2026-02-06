@@ -646,9 +646,6 @@ footer {
     nav.active a.active {
         color: #2563eb !important;
         font-weight: 700 !important;
-        background: rgba(37, 99, 235, 0.12) !important;
-        border-left: 4px solid #2563eb;
-        padding-left: calc(1rem - 4px);
     }
 
     /* Afficher burger */
