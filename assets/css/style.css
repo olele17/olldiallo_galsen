@@ -744,7 +744,7 @@
         padding: 0 1rem;
         scroll-padding: 0 1rem;
         gap: 1rem;
-        scroll-snap-type: x proximity;
+        scroll-snap-type: none;
         -webkit-overflow-scrolling: touch;
         touch-action: pan-x;
         box-sizing: border-box;
@@ -756,8 +756,7 @@
         min-width: 100%;
         max-width: 100%;
         flex-shrink: 0;
-        scroll-snap-align: start;
-        scroll-snap-stop: normal;
+        scroll-snap-align: none;
         box-sizing: border-box;
     }
 
