@@ -62,126 +62,8 @@ class StatsCounter {
 }
 
 // ===== RESULTS SLIDER =====
-class ResultsSlider {
-    constructor(sliderId) {
-        this.slider = document.getElementById(sliderId);
-        if (!this.slider) return;
-        
-        this.cards = this.slider.querySelectorAll('.result-card');
-        this.currentIndex = 0;
-        this.isDown = false;
-        this.startX = 0;
-        this.scrollLeft = 0;
-        
-        this.init();
-    }
-    
-    init() {
-        // Touch/Mouse events pour le swipe
-        this.slider.addEventListener('mousedown', this.handleMouseDown.bind(this));
-        this.slider.addEventListener('mouseleave', this.handleMouseLeave.bind(this));
-        this.slider.addEventListener('mouseup', this.handleMouseUp.bind(this));
-        this.slider.addEventListener('mousemove', this.handleMouseMove.bind(this));
-        
-        // Touch events pour mobile
-        this.slider.addEventListener('touchstart', this.handleTouchStart.bind(this), { passive: true });
-        this.slider.addEventListener('touchmove', this.handleTouchMove.bind(this), { passive: true });
-        this.slider.addEventListener('touchend', this.handleTouchEnd.bind(this));
-        
-        // Auto-scroll optionnel (désactivé par défaut)
-        // this.startAutoScroll();
-    }
-    
-    // ===== MOUSE EVENTS =====
-    handleMouseDown(e) {
-        this.isDown = true;
-        this.slider.style.cursor = 'grabbing';
-        this.startX = e.pageX - this.slider.offsetLeft;
-        this.scrollLeft = this.slider.scrollLeft;
-    }
-    
-    handleMouseLeave() {
-        this.isDown = false;
-        this.slider.style.cursor = 'grab';
-    }
-    
-    handleMouseUp() {
-        this.isDown = false;
-        this.slider.style.cursor = 'grab';
-    }
-    
-    handleMouseMove(e) {
-        if (!this.isDown) return;
-        e.preventDefault();
-        
-        const x = e.pageX - this.slider.offsetLeft;
-        const walk = (x - this.startX) * 2; // Vitesse du scroll
-        this.slider.scrollLeft = this.scrollLeft - walk;
-    }
-    
-    // ===== TOUCH EVENTS =====
-    handleTouchStart(e) {
-        this.startX = e.touches[0].pageX - this.slider.offsetLeft;
-        this.scrollLeft = this.slider.scrollLeft;
-    }
-    
-    handleTouchMove(e) {
-        const x = e.touches[0].pageX - this.slider.offsetLeft;
-        const walk = (x - this.startX) * 2;
-        this.slider.scrollLeft = this.scrollLeft - walk;
-    }
-    
-    handleTouchEnd() {
-        // Snap to nearest card
-        this.snapToCard();
-    }
-    
-    // ===== SNAP TO CARD =====
-    snapToCard() {
-        const cardWidth = this.cards[0].offsetWidth;
-        const gap = 16; // Gap entre les cards (en px)
-        const scrollPosition = this.slider.scrollLeft;
-        const index = Math.round(scrollPosition / (cardWidth + gap));
-        
-        this.scrollToCard(index);
-    }
-    
-    scrollToCard(index) {
-        const cardWidth = this.cards[0].offsetWidth;
-        const gap = 16;
-        const scrollPosition = index * (cardWidth + gap);
-        
-        this.slider.scrollTo({
-            left: scrollPosition,
-            behavior: 'smooth'
-        });
-        
-        this.currentIndex = index;
-    }
-    
-    // ===== AUTO SCROLL (Optionnel) =====
-    startAutoScroll(interval = 3000) {
-        this.autoScrollInterval = setInterval(() => {
-            this.currentIndex = (this.currentIndex + 1) % this.cards.length;
-            this.scrollToCard(this.currentIndex);
-        }, interval);
-        
-        // Arrêter l'auto-scroll au hover
-        this.slider.addEventListener('mouseenter', () => {
-            this.stopAutoScroll();
-        });
-        
-        this.slider.addEventListener('mouseleave', () => {
-            this.startAutoScroll(interval);
-        });
-    }
-    
-    stopAutoScroll() {
-        if (this.autoScrollInterval) {
-            clearInterval(this.autoScrollInterval);
-        }
-    }
-}
+// Aucun JS : défilement 100 % natif (overflow-x: auto), comme la section "Ils nous font confiance".
+// Le JS personnalisé (touch/drag) bloquait le swipe sur mobile.
 
 // ===== HERO PARALLAX EFFECT (DÉSACTIVÉ POUR SCROLL FLUIDE) =====
 function initHeroParallax() {
@@ -291,9 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialiser le counter de stats
     new StatsCounter();
-    
-    // Initialiser le slider
-    new ResultsSlider('resultsSlider');
     
     // Initialiser les animations
     initHeroParallax();
