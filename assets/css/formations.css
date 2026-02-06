@@ -303,7 +303,10 @@
 @media (max-width: 768px) {
     .formations-hero {
         min-height: 40vh;
-        padding: var(--spacing-lg) var(--spacing-md);
+        padding-top: calc(80px + var(--spacing-md));
+        padding-bottom: var(--spacing-lg);
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
     }
 
     .formations-hero h1 {
