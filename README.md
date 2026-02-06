@@ -1,4 +1,4 @@
-# Olele Academy
+# Olèle System
 
 Site vitrine (e-commerce, formations, coaching). Ce README décrit la structure du projet pour qu’un autre développeur s’y retrouve facilement.
 
