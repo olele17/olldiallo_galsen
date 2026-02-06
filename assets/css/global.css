@@ -642,11 +642,13 @@ footer {
         background: transparent;
     }
 
-    /* Lien de la page actuelle visible quand le menu est ouvert */
+    /* Lien de la page actuelle visible quand le menu est ouvert (iPhone / mobile) */
     nav.active a.active {
-        color: var(--gold);
-        font-weight: 700;
-        background: rgba(212, 175, 55, 0.12);
+        color: var(--gold) !important;
+        font-weight: 700 !important;
+        background: rgba(212, 175, 55, 0.18) !important;
+        border-left: 4px solid var(--gold);
+        padding-left: calc(1rem - 4px);
     }
 
     /* Afficher burger */

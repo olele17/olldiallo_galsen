@@ -82,12 +82,15 @@
 
     // ===== PAGE ACTIVE =====
     function initActivePage() {
-        var currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        var links = document.querySelectorAll('nav a');
+        var path = window.location.pathname.split('/').pop() || '';
+        if (path === '') path = 'index';
+        if (!path.endsWith('.html')) path = path + '.html';
+        var currentPage = path;
 
+        var links = document.querySelectorAll('nav a');
         for (var i = 0; i < links.length; i++) {
-            var href = links[i].getAttribute('href');
-            if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+            var href = links[i].getAttribute('href') || '';
+            if (href === currentPage) {
                 links[i].classList.add('active');
             } else {
                 links[i].classList.remove('active');
