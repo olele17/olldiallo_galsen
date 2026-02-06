@@ -298,7 +298,7 @@
         font-size: 2rem;
     }
     
-    /* Une card entière visible par vue sur mobile */
+    /* Une card entière visible par vue sur mobile, toutes centrées pareil */
     .resultats-slider-container {
         padding: 0 1rem;
     }
@@ -306,13 +306,14 @@
     .resultats-slider {
         gap: 1rem;
         padding: 0 0 1rem;
-        scroll-padding: 0 1rem;
+        scroll-padding-inline: 0;
     }
     
     .resultat-card {
         width: 100%;
         min-width: 100%;
         max-width: 100%;
+        scroll-snap-align: center;
     }
     
     .resultat-card:hover {
@@ -362,7 +363,7 @@
     
     .resultats-slider {
         padding: 0 0 1rem;
-        scroll-padding: 0 0.75rem;
+        scroll-padding-inline: 0;
     }
     
     .resultat-image {
