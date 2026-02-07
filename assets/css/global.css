@@ -236,42 +236,60 @@ header.scrolled {
     box-shadow: var(--shadow-md);
 }
 
+/* Logo */
 .logo {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--primary);
-    letter-spacing: -0.3px;
     display: flex;
     align-items: center;
     gap: 0.75rem;
 }
 
+/* Logo badge (emoji 🐐) - utilisé sur la page d'accueil */
 .logo-badge {
-    display: inline-flex;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--white);
-    font-weight: 900;
-    font-size: 1.1rem;
-    border-radius: var(--radius-sm);
-    letter-spacing: 0;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    font-size: 1.8rem;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
     transition: all var(--transition-normal);
 }
 
-.logo-badge:hover {
+.logo-link:hover .logo-badge {
     transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    transition: all var(--transition-normal);
+}
+
+.logo-link:hover .logo-icon {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+.logo-icon svg {
+    width: 70%;
+    height: 70%;
+    color: var(--white);
 }
 
 .logo-text {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-weight: 600;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+    white-space: nowrap;
 }
 
 .logo-highlight {
