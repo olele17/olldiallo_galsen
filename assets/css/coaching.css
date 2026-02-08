@@ -2,13 +2,37 @@
    COACHING.CSS – Page Coaching
    ============================================ */
 
+/* ===================================
+   PALETTE VALIDÉE - Page Coaching
+   Marron / Beige / Blanc / Noir
+   =================================== */
+
+:root {
+    /* Marrons - Usage intelligent */
+    --marron-tres-fonce: #2C1810;
+    --marron-fonce: #4A2F1A;
+    --marron-moyen: #6B4423;
+    --marron-clair: #8B5A3C;
+
+    /* Beiges - Usage intelligent */
+    --beige-tres-clair: #F5EFE7;
+    --beige-clair: #E8D5BF;
+    --beige-moyen: #D4B896;
+    --beige-fonce: #B39C7D;
+
+    /* Neutres */
+    --blanc: #FFFFFF;
+    --noir: #1A1A1A;
+    --gris-fonce: #3A3A3A;
+}
+
 /* ===== HERO COACHING ===== */
 .coaching-hero {
     min-height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+    background: linear-gradient(135deg, var(--marron-fonce) 0%, var(--marron-tres-fonce) 50%, var(--marron-moyen) 100%);
     padding: var(--spacing-xl) 5%;
     padding-top: calc(80px + var(--spacing-lg));
     margin-top: 0;
@@ -25,13 +49,13 @@
     width: 100%;
     height: 100%;
     background-image: 
-        radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(37, 99, 235, 0.15) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(107, 68, 35, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(107, 68, 35, 0.15) 0%, transparent 50%);
     pointer-events: none;
 }
 
 .coaching-hero h1 {
-    color: var(--white);
+    color: var(--blanc);
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
     margin-bottom: var(--spacing-md);
@@ -40,7 +64,7 @@
 }
 
 .coaching-hero p {
-    color: var(--light);
+    color: rgba(255, 255, 255, 0.95);
     font-size: clamp(1.1rem, 2.5vw, 1.3rem);
     max-width: 700px;
     margin: 0 auto;
@@ -73,11 +97,11 @@
 }
 
 .coaching-section:nth-child(even) {
-    background: var(--light);
+    background: var(--beige-tres-clair);
 }
 
 .coaching-section:nth-child(odd) {
-    background: var(--white);
+    background: var(--blanc);
 }
 
 .section-header {
@@ -88,13 +112,13 @@
 .section-header h2 {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
     line-height: 1.3;
-    color: var(--primary);
+    color: var(--marron-moyen);
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
 }
 
 .section-header h2 .highlight {
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -103,7 +127,7 @@
 
 .section-subtitle {
     font-size: 1.1rem;
-    color: var(--gray);
+    color: var(--gris-fonce);
     max-width: 700px;
     margin: 0 auto;
 }
@@ -120,12 +144,12 @@
 
 .intro-text h2 {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
-    color: var(--primary);
+    color: var(--marron-moyen);
     margin-bottom: var(--spacing-md);
 }
 
 .intro-text h2 .highlight {
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -133,7 +157,7 @@
 }
 
 .intro-text p {
-    color: var(--gray);
+    color: var(--gris-fonce);
     line-height: 1.8;
     font-size: 1.05rem;
     margin-bottom: var(--spacing-md);
@@ -141,16 +165,16 @@
 
 /* Card Prix Coaching */
 .coaching-price-card {
-    background: var(--white);
+    background: var(--blanc);
     background-image: 
-        linear-gradient(135deg, rgba(37, 99, 235, 0.04) 25%, transparent 25%),
-        linear-gradient(225deg, rgba(37, 99, 235, 0.04) 25%, transparent 25%),
-        linear-gradient(45deg, rgba(37, 99, 235, 0.04) 25%, transparent 25%),
-        linear-gradient(315deg, rgba(37, 99, 235, 0.04) 25%, transparent 25%);
+        linear-gradient(135deg, rgba(107, 68, 35, 0.04) 25%, transparent 25%),
+        linear-gradient(225deg, rgba(107, 68, 35, 0.04) 25%, transparent 25%),
+        linear-gradient(45deg, rgba(107, 68, 35, 0.04) 25%, transparent 25%),
+        linear-gradient(315deg, rgba(107, 68, 35, 0.04) 25%, transparent 25%);
     background-position: 10px 0, 10px 0, 0 0, 0 0;
     background-size: 20px 20px;
     background-repeat: repeat;
-    border: 3px solid var(--gold);
+    border: 3px solid var(--beige-moyen);
     border-radius: var(--radius-lg);
     padding: var(--spacing-xl);
     text-align: center;
@@ -161,8 +185,8 @@
 
 .price-badge {
     display: inline-block;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--white);
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
+    color: var(--blanc);
     padding: 0.4rem 1rem;
     border-radius: var(--radius-full);
     font-weight: 800;
@@ -174,7 +198,7 @@
 .coaching-price {
     font-size: 2.5rem;
     font-weight: 900;
-    color: var(--gold);
+    color: var(--beige-moyen);
     margin-bottom: 0.5rem;
     line-height: 1;
     display: flex;
@@ -191,7 +215,7 @@
 }
 
 .price-period {
-    color: var(--gray);
+    color: var(--gris-fonce);
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: var(--spacing-lg);
@@ -200,8 +224,8 @@
 .coaching-cta {
     width: 100%;
     padding: 1rem;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--white);
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
+    color: var(--blanc);
     border: none;
     border-radius: 8px;
     font-size: 1rem;
@@ -218,7 +242,7 @@
 
 .coaching-cta:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 8px 24px rgba(107, 68, 35, 0.3);
 }
 
 .coaching-cta i {
@@ -255,7 +279,7 @@
 
 /* ===== CONTENU COACHING (GRID 2x3) ===== */
 .content-section {
-    background: var(--light);
+    background: var(--beige-tres-clair);
 }
 
 .coaching-content-grid {
@@ -267,7 +291,7 @@
 }
 
 .coaching-feature {
-    background: var(--white);
+    background: var(--blanc);
     padding: var(--spacing-lg);
     border-radius: var(--radius-lg);
     border: 2px solid var(--gray-lighter);
@@ -275,7 +299,7 @@
 }
 
 .coaching-feature:hover {
-    border-color: var(--gold);
+    border-color: var(--beige-moyen);
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
 }
@@ -283,7 +307,7 @@
 .feature-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -298,18 +322,18 @@
 
 .feature-icon i {
     font-size: 1.8rem;
-    color: var(--white);
+    color: var(--blanc);
 }
 
 .coaching-feature h3 {
-    color: var(--primary);
+    color: var(--marron-moyen);
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
 }
 
 .coaching-feature p {
-    color: var(--gray);
+    color: var(--gris-fonce);
     line-height: 1.7;
     font-size: 0.95rem;
     margin: 0;
@@ -329,7 +353,7 @@
 
 /* ===== POUR QUI (GRID 3 COLONNES) ===== */
 .target-section {
-    background: var(--white);
+    background: var(--blanc);
 }
 
 .target-grid {
@@ -341,7 +365,7 @@
 }
 
 .target-card {
-    background: var(--white);
+    background: var(--blanc);
     padding: 2.5rem 1.5rem;
     border-radius: var(--radius-lg);
     border: 2px solid var(--gray-lighter);
@@ -350,14 +374,14 @@
 }
 
 .target-card:hover {
-    border-color: var(--gold);
+    border-color: var(--beige-moyen);
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
 }
 
 .target-card i {
     font-size: 3rem;
-    color: var(--gold);
+    color: var(--beige-moyen);
     margin-bottom: var(--spacing-md);
     transition: all var(--transition-normal);
 }
@@ -367,14 +391,14 @@
 }
 
 .target-card h3 {
-    color: var(--primary);
+    color: var(--marron-moyen);
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
 }
 
 .target-card p {
-    color: var(--gray);
+    color: var(--gris-fonce);
     line-height: 2;
     font-size: 0.95rem;
     margin: 0;
@@ -391,7 +415,7 @@
 
 /* ===== CTA FINALE ===== */
 .cta-final-section {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+    background: linear-gradient(135deg, var(--marron-fonce) 0%, var(--marron-tres-fonce) 100%);
     position: relative;
     overflow: hidden;
 }
@@ -404,8 +428,8 @@
     width: 100%;
     height: 100%;
     background-image: 
-        radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(37, 99, 235, 0.15) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(107, 68, 35, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(107, 68, 35, 0.15) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -417,14 +441,14 @@
 }
 
 .cta-final-content h2 {
-    color: var(--primary);
+    color: var(--blanc);
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 800;
     margin-bottom: var(--spacing-md);
 }
 
 .cta-final-content p {
-    color: var(--gray);
+    color: rgba(255, 255, 255, 0.95);
     font-size: clamp(1.1rem, 2.5vw, 1.3rem);
     margin-bottom: var(--spacing-lg);
     max-width: 600px;
@@ -437,8 +461,8 @@
     align-items: center;
     gap: 0.5rem;
     padding: 1.2rem 2.5rem;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--white);
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
+    color: var(--marron-tres-fonce);
     border: none;
     border-radius: 8px;
     font-size: 1.1rem;
@@ -446,12 +470,14 @@
     text-decoration: none;
     transition: all var(--transition-normal);
     white-space: nowrap;
-    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 4px 20px rgba(212, 184, 150, 0.3);
 }
 
 .btn-cta-final:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(37, 99, 235, 0.4);
+    background: linear-gradient(135deg, var(--beige-fonce), var(--beige-moyen));
+    color: var(--blanc);
+    box-shadow: 0 12px 40px rgba(212, 184, 150, 0.4);
 }
 
 .btn-cta-final i {
@@ -476,4 +502,389 @@
         padding: 1rem 2rem;
         font-size: 1rem;
     }
+}
+
+/* ===================================
+   PAGE-COACHING - Overrides palette marron/beige
+   =================================== */
+
+/* Hero Coaching */
+.hero-coaching,
+.page-coaching .coaching-hero {
+    background: linear-gradient(135deg, var(--marron-fonce) 0%, var(--marron-tres-fonce) 50%, var(--marron-moyen) 100%);
+}
+
+.coaching-hero::before,
+.hero-coaching::before,
+.page-coaching .coaching-hero::before {
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(107, 68, 35, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(107, 68, 35, 0.15) 0%, transparent 50%);
+}
+
+.coaching-hero h1,
+.hero-coaching h1,
+.page-coaching .coaching-hero h1 {
+    color: var(--blanc);
+}
+
+.coaching-hero p,
+.hero-coaching p,
+.page-coaching .coaching-hero p {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Titres sections */
+.page-coaching h2,
+.page-coaching h3,
+.page-coaching h4 {
+    color: var(--marron-tres-fonce);
+}
+
+.page-coaching .highlight {
+    background: linear-gradient(135deg, var(--marron-moyen), var(--marron-clair));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-coaching .section-subtitle {
+    color: var(--gris-fonce);
+}
+
+.page-coaching .section:nth-child(even) {
+    background: var(--beige-tres-clair);
+}
+
+.page-coaching .section:nth-child(odd) {
+    background: var(--blanc);
+}
+
+/* Card Prix */
+.page-coaching .pricing-card,
+.page-coaching .price-card,
+.page-coaching .coaching-price-card {
+    background: var(--blanc);
+    border: 3px solid var(--beige-moyen);
+    box-shadow: 0 8px 30px rgba(107, 68, 35, 0.15);
+}
+
+.page-coaching .pricing-card::before,
+.page-coaching .price-card::before,
+.page-coaching .coaching-price-card::before {
+    background-image:
+        linear-gradient(135deg, rgba(107, 68, 35, 0.04) 25%, transparent 25%),
+        linear-gradient(225deg, rgba(107, 68, 35, 0.04) 25%, transparent 25%),
+        linear-gradient(45deg, rgba(107, 68, 35, 0.04) 25%, transparent 25%),
+        linear-gradient(315deg, rgba(107, 68, 35, 0.04) 25%, transparent 25%);
+    background-size: 20px 20px;
+}
+
+.page-coaching .price-badge {
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
+    color: var(--marron-tres-fonce);
+}
+
+.page-coaching .price-amount,
+.page-coaching .price,
+.page-coaching .coaching-price {
+    color: var(--marron-tres-fonce);
+}
+
+.page-coaching .coaching-price .currency {
+    color: var(--marron-tres-fonce);
+}
+
+.page-coaching .price-label,
+.page-coaching .price-duration,
+.page-coaching .price-period {
+    color: var(--gris-fonce);
+}
+
+.page-coaching .price-card .btn,
+.page-coaching .pricing-card .btn,
+.page-coaching .coaching-cta {
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
+    color: var(--marron-tres-fonce);
+}
+
+.page-coaching .price-card .btn:hover,
+.page-coaching .pricing-card .btn:hover,
+.page-coaching .coaching-cta:hover {
+    background: linear-gradient(135deg, var(--marron-fonce), var(--marron-moyen));
+    color: var(--blanc);
+    box-shadow: 0 8px 24px rgba(107, 68, 35, 0.35);
+}
+
+/* Cards features */
+.page-coaching .feature-card,
+.page-coaching .coaching-feature {
+    background: var(--blanc);
+    border: 2px solid rgba(212, 184, 150, 0.3);
+}
+
+.page-coaching .feature-card:hover,
+.page-coaching .coaching-feature:hover {
+    border-color: var(--beige-moyen);
+    box-shadow: 0 8px 30px rgba(107, 68, 35, 0.15);
+    transform: translateY(-8px);
+}
+
+.page-coaching .feature-icon {
+    background: var(--blanc);
+    border: 3px solid var(--beige-moyen);
+    color: var(--beige-moyen);
+}
+
+.page-coaching .feature-card:hover .feature-icon,
+.page-coaching .coaching-feature:hover .feature-icon {
+    background: var(--beige-moyen);
+    color: var(--blanc);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.page-coaching .feature-icon i {
+    color: inherit;
+}
+
+.page-coaching .feature-card h3,
+.page-coaching .coaching-feature h3 {
+    color: var(--marron-tres-fonce);
+}
+
+.page-coaching .feature-card p,
+.page-coaching .coaching-feature p {
+    color: var(--gris-fonce);
+}
+
+/* Cards profils */
+.page-coaching .profile-card,
+.page-coaching .target-card {
+    background: var(--blanc);
+    border: 2px solid rgba(212, 184, 150, 0.3);
+}
+
+.page-coaching .profile-card:hover,
+.page-coaching .target-card:hover {
+    border-color: var(--beige-moyen);
+    box-shadow: 0 8px 30px rgba(107, 68, 35, 0.15);
+    transform: translateY(-8px);
+}
+
+.page-coaching .profile-icon,
+.page-coaching .target-card i {
+    color: var(--beige-moyen);
+}
+
+.page-coaching .profile-card:hover .profile-icon,
+.page-coaching .target-card:hover i {
+    color: var(--marron-fonce);
+    transform: scale(1.15);
+}
+
+.page-coaching .profile-card h3,
+.page-coaching .target-card h3 {
+    color: var(--marron-tres-fonce);
+}
+
+.page-coaching .profile-card p,
+.page-coaching .target-card p {
+    color: var(--gris-fonce);
+}
+
+/* CTA Finale */
+.page-coaching .cta-section,
+.page-coaching .cta-final,
+.page-coaching .cta-final-section {
+    background: linear-gradient(135deg, var(--marron-fonce) 0%, var(--marron-tres-fonce) 100%);
+}
+
+.page-coaching .cta-section::before,
+.page-coaching .cta-final::before,
+.page-coaching .cta-final-section::before {
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(107, 68, 35, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(107, 68, 35, 0.15) 0%, transparent 50%);
+}
+
+.page-coaching .cta-section h2,
+.page-coaching .cta-final h2,
+.page-coaching .cta-final-content h2 {
+    color: var(--blanc);
+}
+
+.page-coaching .cta-section p,
+.page-coaching .cta-final p,
+.page-coaching .cta-final-content p {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.page-coaching .cta-section .btn,
+.page-coaching .cta-final .btn,
+.page-coaching .btn-cta-final {
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
+    color: var(--marron-tres-fonce);
+    box-shadow: 0 4px 20px rgba(212, 184, 150, 0.3);
+}
+
+.page-coaching .cta-section .btn:hover,
+.page-coaching .cta-final .btn:hover,
+.page-coaching .btn-cta-final:hover {
+    background: var(--beige-fonce);
+    color: var(--blanc);
+    box-shadow: 0 12px 40px rgba(212, 184, 150, 0.4);
+}
+
+/* Boutons génériques */
+.page-coaching .btn-primary,
+.page-coaching .cta-button {
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
+    color: var(--marron-tres-fonce);
+    box-shadow: 0 4px 20px rgba(212, 184, 150, 0.3);
+}
+
+.page-coaching .btn-primary:hover,
+.page-coaching .cta-button:hover {
+    background: linear-gradient(135deg, var(--beige-fonce), var(--beige-moyen));
+    box-shadow: 0 8px 30px rgba(212, 184, 150, 0.4);
+}
+
+.page-coaching .btn-outline,
+.page-coaching .btn-secondary {
+    border: 2px solid var(--beige-moyen);
+    color: var(--marron-moyen);
+    background: transparent;
+}
+
+.page-coaching .btn-outline:hover,
+.page-coaching .btn-secondary:hover {
+    background: var(--beige-moyen);
+    color: var(--blanc);
+}
+
+/* Stats */
+.page-coaching .stat-number,
+.page-coaching .stats-number {
+    background: linear-gradient(135deg, var(--marron-fonce), var(--marron-moyen));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-coaching .stat-label {
+    color: var(--gris-fonce);
+}
+
+/* Badges */
+.page-coaching .badge,
+.page-coaching .tag,
+.page-coaching .label {
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
+    color: var(--marron-tres-fonce);
+}
+
+/* Liens */
+.page-coaching main a:not([class*="btn"]):not(.logo-link) {
+    color: var(--marron-moyen);
+}
+
+.page-coaching main a:not([class*="btn"]):not(.logo-link):hover {
+    color: var(--beige-moyen);
+}
+
+/* Header */
+.page-coaching header {
+    background: var(--blanc);
+    border-bottom: 1px solid var(--beige-clair);
+}
+
+.page-coaching .logo-badge {
+    background: linear-gradient(135deg, var(--marron-fonce), var(--marron-moyen));
+    box-shadow: 0 4px 15px rgba(107, 68, 35, 0.3);
+}
+
+.page-coaching .logo-text {
+    color: var(--marron-tres-fonce);
+}
+
+.page-coaching .logo-highlight {
+    color: var(--marron-tres-fonce);
+    -webkit-text-fill-color: var(--marron-tres-fonce);
+    background: none;
+}
+
+.page-coaching nav a {
+    color: var(--marron-fonce);
+}
+
+.page-coaching nav a:hover,
+.page-coaching nav a.active {
+    color: var(--marron-moyen);
+}
+
+.page-coaching nav a::after {
+    background: var(--beige-moyen);
+}
+
+/* Footer */
+.page-coaching footer {
+    background: var(--marron-tres-fonce);
+    color: var(--beige-tres-clair);
+    border-top: 3px solid rgba(212, 184, 150, 0.5);
+}
+
+.page-coaching footer h3,
+.page-coaching footer h4 {
+    color: var(--beige-clair);
+}
+
+.page-coaching footer a {
+    color: var(--beige-tres-clair);
+}
+
+.page-coaching footer a:hover {
+    color: var(--beige-moyen);
+}
+
+.page-coaching footer .footer-stat-item strong {
+    color: var(--beige-moyen);
+}
+
+.page-coaching .footer-description,
+.page-coaching .footer-stat-item span {
+    color: var(--beige-tres-clair);
+}
+
+.page-coaching .footer-contact li,
+.page-coaching .footer-contact a {
+    color: var(--beige-tres-clair);
+}
+
+.page-coaching .footer-contact i {
+    color: var(--beige-moyen);
+}
+
+.page-coaching .footer-contact a:hover {
+    color: var(--beige-clair);
+}
+
+.page-coaching .footer-bottom p,
+.page-coaching .footer-credit {
+    color: var(--beige-tres-clair);
+}
+
+.page-coaching .footer-bottom {
+    border-top: 1px solid rgba(212, 184, 150, 0.2);
+}
+
+.page-coaching .social-links a {
+    color: var(--beige-tres-clair);
+    background: rgba(212, 184, 150, 0.1);
+}
+
+.page-coaching .social-links a:hover {
+    background: var(--beige-moyen);
+    border-color: var(--beige-clair);
+    color: var(--marron-tres-fonce);
+    box-shadow: 0 6px 20px rgba(107, 68, 35, 0.3);
 }

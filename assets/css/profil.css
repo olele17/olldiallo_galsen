@@ -3,13 +3,37 @@
    Site: Olèle System
    =================================== */
 
+/* ===================================
+   PALETTE VALIDÉE - Page Profil
+   Marron / Beige / Blanc / Noir
+   =================================== */
+
+:root {
+    /* Marrons - Usage intelligent */
+    --marron-tres-fonce: #2C1810;
+    --marron-fonce: #4A2F1A;
+    --marron-moyen: #6B4423;
+    --marron-clair: #8B5A3C;
+
+    /* Beiges - Usage intelligent */
+    --beige-tres-clair: #F5EFE7;
+    --beige-clair: #E8D5BF;
+    --beige-moyen: #D4B896;
+    --beige-fonce: #B39C7D;
+
+    /* Neutres */
+    --blanc: #FFFFFF;
+    --noir: #1A1A1A;
+    --gris-fonce: #3A3A3A;
+}
+
 /* ===== HERO PROFIL ===== */
 .profile-hero {
     min-height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+    background: linear-gradient(135deg, var(--marron-fonce) 0%, var(--marron-tres-fonce) 50%, var(--marron-moyen) 100%);
     padding-top: calc(80px + var(--spacing-lg));
     padding-bottom: var(--spacing-xl);
     padding-left: 5%;
@@ -28,13 +52,13 @@
     width: 100%;
     height: 100%;
     background-image:
-        radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(37, 99, 235, 0.15) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(107, 68, 35, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(107, 68, 35, 0.15) 0%, transparent 50%);
     pointer-events: none;
 }
 
 .profile-hero h1 {
-    color: var(--white);
+    color: var(--blanc);
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
     margin-bottom: var(--spacing-md);
@@ -43,7 +67,7 @@
 }
 
 .profile-hero p {
-    color: var(--light);
+    color: rgba(255, 255, 255, 0.95);
     font-size: clamp(1.1rem, 2.5vw, 1.3rem);
     max-width: 700px;
     margin: 0 auto;
@@ -57,11 +81,11 @@
 }
 
 .profile-section:nth-child(even) {
-    background: var(--light);
+    background: var(--beige-tres-clair);
 }
 
 .profile-section:nth-child(odd) {
-    background: var(--white);
+    background: var(--blanc);
 }
 
 /* En-têtes de section */
@@ -73,13 +97,13 @@
 .section-header h2 {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
     line-height: 1.3;
-    color: var(--primary);
+    color: var(--marron-moyen);
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
 }
 
 .section-header h2 .highlight {
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -88,7 +112,7 @@
 
 .section-subtitle {
     font-size: 1.1rem;
-    color: var(--gray);
+    color: var(--gris-fonce);
     max-width: 700px;
     margin: 0 auto;
 }
@@ -112,7 +136,7 @@
     height: 200px;
     border-radius: 50%;
     overflow: hidden;
-    border: 5px solid var(--gold);
+    border: 5px solid var(--beige-moyen);
     box-shadow: var(--shadow-lg);
 }
 
@@ -125,11 +149,11 @@
 .profile-image-placeholder {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--accent), var(--secondary));
+    background: linear-gradient(135deg, var(--marron-clair), var(--marron-fonce));
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
+    color: var(--blanc);
     font-size: 4rem;
 }
 
@@ -138,14 +162,14 @@
 }
 
 .profile-text h3 {
-    color: var(--primary);
+    color: var(--marron-moyen);
     font-size: 1.8rem;
     margin-bottom: var(--spacing-md);
     font-weight: 700;
 }
 
 .profile-text p {
-    color: var(--gray);
+    color: var(--gris-fonce);
     line-height: 1.8;
     margin-bottom: var(--spacing-md);
     font-size: 1.05rem;
@@ -192,7 +216,7 @@
 
 /* ===== SECTION PARCOURS (TIMELINE) ===== */
 .parcours-section {
-    background: var(--light);
+    background: var(--beige-tres-clair);
 }
 
 .timeline {
@@ -210,7 +234,7 @@
     top: 0;
     bottom: 0;
     width: 3px;
-    background: linear-gradient(180deg, var(--gold), var(--gold-light));
+    background: linear-gradient(180deg, var(--beige-moyen), var(--beige-clair));
     transform: translateX(-50%);
 }
 
@@ -245,7 +269,7 @@
 .timeline-marker {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -253,18 +277,18 @@
     flex-shrink: 0;
     position: relative;
     z-index: 2;
-    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 8px 24px rgba(107, 68, 35, 0.3);
 }
 
 .timeline-marker i {
     font-size: 2rem;
-    color: var(--white);
+    color: var(--blanc);
 }
 
 /* Contenu Timeline */
 .timeline-content {
     flex: 1;
-    background: var(--white);
+    background: var(--blanc);
     padding: var(--spacing-lg);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
@@ -278,8 +302,8 @@
 
 .timeline-year {
     display: inline-block;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--white);
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
+    color: var(--blanc);
     padding: 0.4rem 1rem;
     border-radius: var(--radius-full);
     font-weight: 800;
@@ -288,14 +312,14 @@
 }
 
 .timeline-content h3 {
-    color: var(--primary);
+    color: var(--marron-moyen);
     font-size: 1.5rem;
     font-weight: 700;
     margin: var(--spacing-sm) 0;
 }
 
 .timeline-content p {
-    color: var(--gray);
+    color: var(--gris-fonce);
     line-height: 1.7;
     margin: 0;
     font-size: 1rem;
@@ -351,7 +375,7 @@
 
 /* ===== SECTION COMPÉTENCES ===== */
 .competences-section {
-    background: var(--white);
+    background: var(--blanc);
 }
 
 .competences-grid {
@@ -364,7 +388,7 @@
 
 /* Card Compétence */
 .competence-card {
-    background: var(--white);
+    background: var(--blanc);
     padding: var(--spacing-lg);
     border-radius: var(--radius-lg);
     border: 2px solid var(--gray-lighter);
@@ -376,7 +400,7 @@
 }
 
 .competence-card:hover {
-    border-color: var(--gold);
+    border-color: var(--beige-moyen);
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
 }
@@ -385,7 +409,7 @@
 .competence-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -396,17 +420,17 @@
 
 .competence-card:hover .competence-icon {
     transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 8px 24px rgba(107, 68, 35, 0.25);
 }
 
 .competence-icon i {
     font-size: 2rem;
-    color: var(--white);
+    color: var(--blanc);
 }
 
 /* Titre Compétence */
 .competence-card h3 {
-    color: var(--primary);
+    color: var(--marron-moyen);
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
@@ -414,7 +438,7 @@
 
 /* Description */
 .competence-card p {
-    color: var(--gray);
+    color: var(--gris-fonce);
     line-height: 1.7;
     font-size: 0.95rem;
     margin: 0;
@@ -449,7 +473,7 @@
 
 /* ===== SECTION CHIFFRES CLÉS ===== */
 .chiffres-section {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%) !important;
+    background: linear-gradient(135deg, var(--marron-moyen) 0%, var(--marron-fonce) 50%, var(--marron-clair) 100%) !important;
     padding: var(--spacing-xl) 0;
     position: relative;
     overflow: hidden;
@@ -463,24 +487,24 @@
     width: 100%;
     height: 100%;
     background-image:
-        radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(37, 99, 235, 0.15) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(107, 68, 35, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(107, 68, 35, 0.15) 0%, transparent 50%);
     pointer-events: none;
 }
 
 .chiffres-section .section-header h2 {
-    color: var(--white);
+    color: var(--blanc);
 }
 
 .chiffres-section .section-header h2 .highlight {
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .chiffres-section .section-subtitle {
-    color: var(--light);
+    color: rgba(255, 255, 255, 0.95);
 }
 
 .chiffres-grid {
@@ -500,23 +524,23 @@
     -webkit-backdrop-filter: blur(10px);
     padding: var(--spacing-xl) var(--spacing-md);
     border-radius: var(--radius-lg);
-    border: 2px solid rgba(59, 130, 246, 0.4);
+    border: 2px solid rgba(212, 184, 150, 0.4);
     text-align: center;
     transition: all var(--transition-normal);
 }
 
 .chiffre-card:hover {
     background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(59, 130, 246, 0.7);
+    border-color: rgba(212, 184, 150, 0.7);
     transform: translateY(-10px);
-    box-shadow: 0 12px 40px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 12px 40px rgba(107, 68, 35, 0.25);
 }
 
 /* Icône Chiffre */
 .chiffre-icon {
     width: 70px;
     height: 70px;
-    background: var(--gold);
+    background: var(--beige-moyen);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -532,24 +556,22 @@
 
 .chiffre-icon i {
     font-size: 2rem;
-    color: var(--white);
+    color: var(--blanc);
 }
 
 /* Nombre */
 .chiffre-number {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 900;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--blanc);
     margin-bottom: var(--spacing-sm);
     line-height: 1.2;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Label */
 .chiffre-label {
-    color: var(--white);
+    color: var(--blanc);
     font-size: 1.1rem;
     font-weight: 600;
     margin: 0;
@@ -575,7 +597,7 @@
 
 /* ===== SECTION RÉSEAUX SOCIAUX ===== */
 .social-media-section {
-    background: var(--light);
+    background: var(--beige-tres-clair);
 }
 
 .social-platforms-grid {
@@ -588,7 +610,7 @@
 
 /* Card Plateforme Sociale */
 .social-platform-card {
-    background: var(--white);
+    background: var(--blanc);
     padding: var(--spacing-xl);
     border-radius: var(--radius-lg);
     border: 2px solid var(--gray-lighter);
@@ -609,7 +631,7 @@
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform var(--transition-normal);
@@ -620,7 +642,7 @@
 }
 
 .social-platform-card:hover {
-    border-color: var(--gold);
+    border-color: var(--beige-moyen);
     transform: translateY(-10px);
     box-shadow: var(--shadow-lg);
 }
@@ -629,7 +651,7 @@
 .platform-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -640,17 +662,17 @@
 
 .social-platform-card:hover .platform-icon {
     transform: scale(1.15) rotate(-10deg);
-    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 8px 24px rgba(107, 68, 35, 0.25);
 }
 
 .platform-icon i {
     font-size: 2.2rem;
-    color: var(--white);
+    color: var(--blanc);
 }
 
 /* Nom Plateforme */
 .social-platform-card h3 {
-    color: var(--primary);
+    color: var(--marron-moyen);
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: var(--spacing-xs);
@@ -658,7 +680,7 @@
 
 /* Handle */
 .platform-handle {
-    color: var(--gold);
+    color: var(--beige-moyen);
     font-size: 1.1rem;
     font-weight: 600;
     margin: 0 0 var(--spacing-sm) 0;
@@ -666,7 +688,7 @@
 
 /* Description */
 .platform-desc {
-    color: var(--gray);
+    color: var(--gris-fonce);
     font-size: 0.95rem;
     line-height: 1.6;
     margin: 0;
@@ -714,7 +736,7 @@
 
 /* ===== SECTION NOS PARTENAIRES ===== */
 .partenaires-section {
-    background: var(--white);
+    background: var(--blanc);
     padding: var(--spacing-xl) 0;
 }
 
@@ -728,7 +750,7 @@
 
 /* Card Partenaire */
 .partenaire-card {
-    background: var(--white);
+    background: var(--blanc);
     padding: var(--spacing-xl);
     border-radius: var(--radius-lg);
     border: 2px solid var(--gray-lighter);
@@ -742,10 +764,10 @@
 }
 
 .partenaire-card:hover {
-    border-color: var(--gold);
+    border-color: var(--beige-moyen);
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.02), rgba(37, 99, 235, 0.05));
+    background: linear-gradient(135deg, rgba(212, 184, 150, 0.08), rgba(107, 68, 35, 0.05));
 }
 
 /* Logo Partenaire */
@@ -759,18 +781,18 @@
 
 .partenaire-logo i {
     font-size: 3rem;
-    color: var(--gold);
+    color: var(--beige-moyen);
     margin-bottom: var(--spacing-sm);
     transition: all var(--transition-normal);
 }
 
 .partenaire-card:hover .partenaire-logo i {
     transform: scale(1.15);
-    color: var(--gold-light);
+    color: var(--beige-clair);
 }
 
 .partenaire-logo h3 {
-    color: var(--primary);
+    color: var(--marron-moyen);
     font-size: 1.8rem;
     font-weight: 800;
     margin: 0;
@@ -778,7 +800,7 @@
 }
 
 .partenaire-card:hover .partenaire-logo h3 {
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -786,7 +808,7 @@
 
 /* Description Partenaire */
 .partenaire-desc {
-    color: var(--gray);
+    color: var(--gris-fonce);
     font-size: 1rem;
     font-weight: 500;
     margin: 0;
@@ -823,4 +845,314 @@
     .partenaire-card {
         min-height: 160px;
     }
+}
+
+/* ===================================
+   PAGE-PROFIL - Overrides palette marron/beige
+   =================================== */
+
+/* Hero Profil - Fond marron */
+.profil-hero,
+.hero-profil,
+.page-profil .profile-hero {
+    background: linear-gradient(135deg, var(--marron-fonce) 0%, var(--marron-tres-fonce) 50%, var(--marron-moyen) 100%);
+}
+
+.profil-hero::before,
+.hero-profil::before,
+.page-profil .profile-hero::before {
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(107, 68, 35, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(107, 68, 35, 0.15) 0%, transparent 50%);
+}
+
+.profil-hero h1,
+.hero-profil h1,
+.page-profil .profile-hero h1 {
+    color: var(--blanc);
+}
+
+.profil-hero p,
+.hero-profil p,
+.page-profil .profile-hero p {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Titres sections */
+.page-profil h2,
+.page-profil h3,
+.page-profil h4 {
+    color: var(--marron-tres-fonce);
+}
+
+.page-profil .highlight {
+    background: linear-gradient(135deg, var(--marron-moyen), var(--marron-clair));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-profil .section-subtitle {
+    color: var(--gris-fonce);
+}
+
+/* Alternance backgrounds */
+.page-profil .section:nth-child(even) {
+    background: var(--beige-tres-clair);
+}
+
+.page-profil .section:nth-child(odd) {
+    background: var(--blanc);
+}
+
+/* Cards génériques */
+.page-profil .card,
+.page-profil .skill-card,
+.page-profil .experience-card,
+.page-profil .service-card,
+.page-profil .competence-card,
+.page-profil .timeline-content,
+.page-profil .social-platform-card,
+.page-profil .partenaire-card {
+    background: var(--blanc);
+    border: 2px solid rgba(212, 184, 150, 0.3);
+}
+
+.page-profil .card:hover,
+.page-profil .skill-card:hover,
+.page-profil .experience-card:hover,
+.page-profil .service-card:hover,
+.page-profil .competence-card:hover,
+.page-profil .timeline-content:hover,
+.page-profil .social-platform-card:hover,
+.page-profil .partenaire-card:hover {
+    border-color: var(--beige-moyen);
+    box-shadow: 0 8px 30px rgba(107, 68, 35, 0.15);
+}
+
+/* Icônes cards */
+.page-profil .card-icon,
+.page-profil .skill-icon,
+.page-profil .service-icon,
+.page-profil .competence-icon,
+.page-profil .platform-icon,
+.page-profil .timeline-marker {
+    background: linear-gradient(135deg, var(--marron-fonce), var(--marron-moyen));
+    color: var(--beige-tres-clair);
+}
+
+.page-profil .competence-icon i,
+.page-profil .platform-icon i,
+.page-profil .timeline-marker i {
+    color: var(--blanc);
+}
+
+/* Titres cards */
+.page-profil .card h3,
+.page-profil .skill-card h3,
+.page-profil .service-card h3,
+.page-profil .competence-card h3,
+.page-profil .social-platform-card h3,
+.page-profil .partenaire-logo h3,
+.page-profil .timeline-content h3 {
+    color: var(--marron-tres-fonce);
+}
+
+/* Textes cards */
+.page-profil .card p,
+.page-profil .skill-card p,
+.page-profil .service-card p,
+.page-profil .competence-card p,
+.page-profil .social-platform-card p,
+.page-profil .partenaire-desc,
+.page-profil .timeline-content p {
+    color: var(--gris-fonce);
+}
+
+/* Boutons primaires */
+.page-profil .btn-primary,
+.page-profil .cta-button,
+.page-profil .btn:not(.btn-secondary):not(.btn-outline) {
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
+    color: var(--marron-tres-fonce);
+    box-shadow: 0 4px 20px rgba(212, 184, 150, 0.3);
+}
+
+.page-profil .btn-primary:hover,
+.page-profil .cta-button:hover,
+.page-profil .btn:not(.btn-secondary):not(.btn-outline):hover {
+    background: linear-gradient(135deg, var(--beige-fonce), var(--beige-moyen));
+    box-shadow: 0 8px 30px rgba(212, 184, 150, 0.4);
+}
+
+/* Boutons outline */
+.page-profil .btn-outline,
+.page-profil .btn-secondary {
+    border: 2px solid var(--beige-moyen);
+    color: var(--marron-moyen);
+    background: transparent;
+}
+
+.page-profil .btn-outline:hover,
+.page-profil .btn-secondary:hover {
+    background: var(--beige-moyen);
+    color: var(--blanc);
+}
+
+/* Stats - Chiffres visibles */
+.page-profil .stat-number,
+.page-profil .stats-number {
+    background: linear-gradient(135deg, var(--marron-fonce), var(--marron-moyen));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Chiffres clés : blanc pour contraste sur fond marron */
+.page-profil .chiffre-number {
+    color: var(--blanc);
+    background: none;
+    -webkit-text-fill-color: var(--blanc);
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+}
+
+.page-profil .stat-label,
+.page-profil .chiffre-label {
+    color: var(--blanc);
+}
+
+.page-profil .chiffres-section .section-header h2,
+.page-profil .chiffres-section .section-subtitle {
+    color: var(--blanc);
+}
+
+.page-profil .chiffres-section .section-header h2 .highlight {
+    color: var(--beige-clair);
+    -webkit-text-fill-color: var(--beige-clair);
+    background: none;
+}
+
+/* Badges */
+.page-profil .badge,
+.page-profil .tag,
+.page-profil .label,
+.page-profil .timeline-year {
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
+    color: var(--marron-tres-fonce);
+}
+
+/* Progress bars */
+.page-profil .progress-bar,
+.page-profil .skill-progress {
+    background: var(--beige-clair);
+}
+
+.page-profil .progress-fill {
+    background: linear-gradient(135deg, var(--marron-fonce), var(--marron-moyen));
+}
+
+/* Liens dans contenu */
+.page-profil main a:not([class*="btn"]):not(.logo-link) {
+    color: var(--marron-moyen);
+}
+
+.page-profil main a:not([class*="btn"]):not(.logo-link):hover {
+    color: var(--beige-moyen);
+}
+
+/* Header - Page profil */
+.page-profil header {
+    background: var(--blanc);
+    border-bottom: 1px solid var(--beige-clair);
+}
+
+.page-profil .logo-badge {
+    background: linear-gradient(135deg, var(--marron-fonce), var(--marron-moyen));
+    box-shadow: 0 4px 15px rgba(107, 68, 35, 0.3);
+}
+
+.page-profil .logo-text {
+    color: var(--marron-tres-fonce);
+}
+
+.page-profil .logo-highlight {
+    color: var(--marron-tres-fonce);
+    -webkit-text-fill-color: var(--marron-tres-fonce);
+    background: none;
+}
+
+.page-profil nav a {
+    color: var(--marron-fonce);
+}
+
+.page-profil nav a:hover,
+.page-profil nav a.active {
+    color: var(--marron-moyen);
+}
+
+.page-profil nav a::after {
+    background: var(--beige-moyen);
+}
+
+/* Footer - Page profil */
+.page-profil footer {
+    background: var(--marron-tres-fonce);
+    color: var(--beige-tres-clair);
+    border-top: 3px solid rgba(212, 184, 150, 0.5);
+}
+
+.page-profil footer h3,
+.page-profil footer h4 {
+    color: var(--beige-clair);
+}
+
+.page-profil footer a {
+    color: var(--beige-tres-clair);
+}
+
+.page-profil footer a:hover {
+    color: var(--beige-moyen);
+}
+
+.page-profil footer .footer-stat-item strong {
+    color: var(--beige-moyen);
+}
+
+.page-profil .footer-description,
+.page-profil .footer-stat-item span {
+    color: var(--beige-tres-clair);
+}
+
+.page-profil .footer-contact li,
+.page-profil .footer-contact a {
+    color: var(--beige-tres-clair);
+}
+
+.page-profil .footer-contact i {
+    color: var(--beige-moyen);
+}
+
+.page-profil .footer-contact a:hover {
+    color: var(--beige-clair);
+}
+
+.page-profil .footer-bottom p,
+.page-profil .footer-credit {
+    color: var(--beige-tres-clair);
+}
+
+.page-profil .footer-bottom {
+    border-top: 1px solid rgba(212, 184, 150, 0.2);
+}
+
+.page-profil .social-links a {
+    color: var(--beige-tres-clair);
+    background: rgba(212, 184, 150, 0.1);
+}
+
+.page-profil .social-links a:hover {
+    background: var(--beige-moyen);
+    border-color: var(--beige-clair);
+    color: var(--marron-tres-fonce);
+    box-shadow: 0 6px 20px rgba(107, 68, 35, 0.3);
 }

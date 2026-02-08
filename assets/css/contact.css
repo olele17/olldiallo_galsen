@@ -3,13 +3,37 @@
    Site: Olèle System
    =================================== */
 
+/* ===================================
+   PALETTE VALIDÉE - Page Contact
+   Marron / Beige / Blanc / Noir
+   =================================== */
+
+:root {
+    /* Marrons - Usage intelligent */
+    --marron-tres-fonce: #2C1810;
+    --marron-fonce: #4A2F1A;
+    --marron-moyen: #6B4423;
+    --marron-clair: #8B5A3C;
+
+    /* Beiges - Usage intelligent */
+    --beige-tres-clair: #F5EFE7;
+    --beige-clair: #E8D5BF;
+    --beige-moyen: #D4B896;
+    --beige-fonce: #B39C7D;
+
+    /* Neutres */
+    --blanc: #FFFFFF;
+    --noir: #1A1A1A;
+    --gris-fonce: #3A3A3A;
+}
+
 /* ===== HERO CONTACT ===== */
 .contact-hero {
     min-height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+    background: linear-gradient(135deg, var(--marron-fonce) 0%, var(--marron-tres-fonce) 50%, var(--marron-moyen) 100%);
     padding: var(--spacing-xl) 5%;
     padding-top: calc(80px + var(--spacing-lg));
     margin-top: 0;
@@ -26,13 +50,13 @@
     width: 100%;
     height: 100%;
     background-image: 
-        radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(37, 99, 235, 0.15) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(107, 68, 35, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(107, 68, 35, 0.15) 0%, transparent 50%);
     pointer-events: none;
 }
 
 .contact-hero h1 {
-    color: var(--white);
+    color: var(--blanc);
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
     margin-bottom: var(--spacing-md);
@@ -41,7 +65,7 @@
 }
 
 .contact-hero p {
-    color: var(--light);
+    color: rgba(255, 255, 255, 0.95);
     font-size: clamp(1.1rem, 2.5vw, 1.3rem);
     max-width: 700px;
     margin: 0 auto;
@@ -55,11 +79,11 @@
 }
 
 .contact-section:nth-child(even) {
-    background: var(--light);
+    background: var(--beige-tres-clair);
 }
 
 .contact-section:nth-child(odd) {
-    background: var(--white);
+    background: var(--blanc);
 }
 
 /* En-têtes de section */
@@ -71,13 +95,13 @@
 .section-header h2 {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
     line-height: 1.3;
-    color: var(--primary);
+    color: var(--marron-moyen);
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
 }
 
 .section-header h2 .highlight {
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -86,14 +110,14 @@
 
 .section-subtitle {
     font-size: 1.1rem;
-    color: var(--gray);
+    color: var(--gris-fonce);
     max-width: 700px;
     margin: 0 auto;
 }
 
 /* ===== SECTION COORDONNÉES (3 CARDS) ===== */
 .coordonnees-section {
-    background: var(--white);
+    background: var(--blanc);
 }
 
 .coordonnees-grid {
@@ -105,7 +129,7 @@
 }
 
 .coordonnee-card {
-    background: var(--white);
+    background: var(--blanc);
     padding: 1.5rem 1rem;
     border-radius: var(--radius-lg);
     border: 2px solid var(--gray-lighter);
@@ -114,7 +138,7 @@
 }
 
 .coordonnee-card:hover {
-    border-color: var(--gold);
+    border-color: var(--beige-moyen);
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
 }
@@ -122,7 +146,7 @@
 .coordonnee-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -137,18 +161,18 @@
 
 .coordonnee-icon i {
     font-size: 2rem;
-    color: var(--white);
+    color: var(--blanc);
 }
 
 .coordonnee-card h3 {
-    color: var(--primary);
+    color: var(--marron-moyen);
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
 .coordonnee-card p {
-    color: var(--gray);
+    color: var(--gris-fonce);
     line-height: 1.6;
     font-size: 0.9rem;
     margin-bottom: 1rem;
@@ -159,8 +183,8 @@
     align-items: center;
     gap: 0.4rem;
     padding: 0.7rem 1rem;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--white);
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
+    color: var(--marron-tres-fonce);
     border-radius: 8px;
     text-decoration: none;
     font-weight: 700;
@@ -171,18 +195,18 @@
 
 .coordonnee-link:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 8px 20px rgba(107, 68, 35, 0.3);
 }
 
 /* ===== SECTION FORMULAIRE ===== */
 .formulaire-section {
-    background: var(--light);
+    background: var(--beige-tres-clair);
 }
 
 .contact-form-container {
     max-width: 700px;
     margin: 0 auto;
-    background: var(--white);
+    background: var(--blanc);
     padding: var(--spacing-xl);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
@@ -201,7 +225,7 @@
 }
 
 .form-group label {
-    color: var(--primary);
+    color: var(--marron-moyen);
     font-weight: 600;
     margin-bottom: 0.5rem;
     font-size: 0.95rem;
@@ -222,8 +246,8 @@
 .form-group textarea:focus,
 .form-group select:focus {
     outline: none;
-    border-color: var(--gold);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    border-color: var(--beige-moyen);
+    box-shadow: 0 0 0 3px rgba(212, 184, 150, 0.1);
 }
 
 .form-group textarea {
@@ -233,8 +257,8 @@
 
 .form-submit {
     padding: 1rem 2rem;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--white);
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
+    color: var(--marron-tres-fonce);
     border: none;
     border-radius: 8px;
     font-size: 1.1rem;
@@ -246,7 +270,7 @@
 
 .form-submit:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 8px 24px rgba(107, 68, 35, 0.3);
 }
 
 .form-submit:active {
@@ -295,4 +319,283 @@
     .coordonnee-icon i {
         font-size: 1.8rem;
     }
+}
+
+/* ===================================
+   PAGE-CONTACT - Overrides palette marron/beige
+   =================================== */
+
+/* Hero Contact */
+.hero-contact,
+.page-contact .contact-hero {
+    background: linear-gradient(135deg, var(--marron-fonce) 0%, var(--marron-tres-fonce) 50%, var(--marron-moyen) 100%);
+}
+
+.contact-hero::before,
+.hero-contact::before,
+.page-contact .contact-hero::before {
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(107, 68, 35, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(107, 68, 35, 0.15) 0%, transparent 50%);
+}
+
+.contact-hero h1,
+.hero-contact h1,
+.page-contact .contact-hero h1 {
+    color: var(--blanc);
+}
+
+.contact-hero p,
+.hero-contact p,
+.page-contact .contact-hero p {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Titres sections */
+.page-contact h2,
+.page-contact h3,
+.page-contact h4 {
+    color: var(--marron-tres-fonce);
+}
+
+.page-contact .highlight {
+    background: linear-gradient(135deg, var(--marron-moyen), var(--marron-clair));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-contact .section-subtitle {
+    color: var(--gris-fonce);
+}
+
+.page-contact .section:nth-child(even) {
+    background: var(--beige-tres-clair);
+}
+
+.page-contact .section:nth-child(odd) {
+    background: var(--blanc);
+}
+
+/* Section coordonnées */
+.page-contact .coordonnees-section {
+    background: var(--blanc);
+}
+
+.page-contact .coordonnee-card {
+    background: var(--blanc);
+    border: 2px solid rgba(212, 184, 150, 0.3);
+}
+
+.page-contact .coordonnee-card:hover {
+    border-color: var(--beige-moyen);
+    box-shadow: 0 8px 30px rgba(107, 68, 35, 0.15);
+}
+
+.page-contact .coordonnee-icon {
+    background: linear-gradient(135deg, var(--marron-fonce), var(--marron-moyen));
+}
+
+.page-contact .coordonnee-icon i {
+    color: var(--beige-tres-clair);
+}
+
+.page-contact .coordonnee-card:hover .coordonnee-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.page-contact .coordonnee-card h3 {
+    color: var(--marron-tres-fonce);
+}
+
+.page-contact .coordonnee-card p {
+    color: var(--gris-fonce);
+}
+
+.page-contact .coordonnee-link {
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
+    color: var(--marron-tres-fonce);
+}
+
+.page-contact .coordonnee-link:hover {
+    background: linear-gradient(135deg, var(--beige-fonce), var(--beige-moyen));
+    box-shadow: 0 8px 20px rgba(107, 68, 35, 0.3);
+}
+
+/* Formulaire */
+.page-contact .formulaire-section {
+    background: var(--beige-tres-clair);
+}
+
+.page-contact .contact-form-container {
+    background: var(--blanc);
+    border: 2px solid rgba(212, 184, 150, 0.3);
+}
+
+.page-contact .form-group label {
+    color: var(--marron-tres-fonce);
+}
+
+.page-contact .form-group input,
+.page-contact .form-group textarea,
+.page-contact .form-group select {
+    border: 2px solid rgba(212, 184, 150, 0.3);
+}
+
+.page-contact .form-group input:focus,
+.page-contact .form-group textarea:focus,
+.page-contact .form-group select:focus {
+    border-color: var(--beige-moyen);
+    box-shadow: 0 0 0 3px rgba(212, 184, 150, 0.1);
+}
+
+.page-contact .form-submit {
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
+    color: var(--marron-tres-fonce);
+}
+
+.page-contact .form-submit:hover {
+    background: linear-gradient(135deg, var(--beige-fonce), var(--beige-moyen));
+    box-shadow: 0 8px 24px rgba(107, 68, 35, 0.3);
+}
+
+/* Boutons */
+.page-contact .btn-primary,
+.page-contact .cta-button {
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
+    color: var(--marron-tres-fonce);
+    box-shadow: 0 4px 20px rgba(212, 184, 150, 0.3);
+}
+
+.page-contact .btn-primary:hover,
+.page-contact .cta-button:hover {
+    background: linear-gradient(135deg, var(--beige-fonce), var(--beige-moyen));
+    box-shadow: 0 8px 30px rgba(212, 184, 150, 0.4);
+}
+
+.page-contact .btn-outline,
+.page-contact .btn-secondary {
+    border: 2px solid var(--beige-moyen);
+    color: var(--marron-moyen);
+    background: transparent;
+}
+
+.page-contact .btn-outline:hover,
+.page-contact .btn-secondary:hover {
+    background: var(--beige-moyen);
+    color: var(--blanc);
+}
+
+/* Badges */
+.page-contact .badge,
+.page-contact .tag,
+.page-contact .label {
+    background: linear-gradient(135deg, var(--beige-moyen), var(--beige-clair));
+    color: var(--marron-tres-fonce);
+}
+
+/* Liens */
+.page-contact main a:not([class*="btn"]):not(.logo-link):not(.coordonnee-link) {
+    color: var(--marron-moyen);
+}
+
+.page-contact main a:not([class*="btn"]):not(.logo-link):not(.coordonnee-link):hover {
+    color: var(--beige-moyen);
+}
+
+/* Header */
+.page-contact header {
+    background: var(--blanc);
+    border-bottom: 1px solid var(--beige-clair);
+}
+
+.page-contact .logo-badge {
+    background: linear-gradient(135deg, var(--marron-fonce), var(--marron-moyen));
+    box-shadow: 0 4px 15px rgba(107, 68, 35, 0.3);
+}
+
+.page-contact .logo-text {
+    color: var(--marron-tres-fonce);
+}
+
+.page-contact .logo-highlight {
+    color: var(--marron-tres-fonce);
+    -webkit-text-fill-color: var(--marron-tres-fonce);
+    background: none;
+}
+
+.page-contact nav a {
+    color: var(--marron-fonce);
+}
+
+.page-contact nav a:hover,
+.page-contact nav a.active {
+    color: var(--marron-moyen);
+}
+
+.page-contact nav a::after {
+    background: var(--beige-moyen);
+}
+
+/* Footer */
+.page-contact footer {
+    background: var(--marron-tres-fonce);
+    color: var(--beige-tres-clair);
+    border-top: 3px solid rgba(212, 184, 150, 0.5);
+}
+
+.page-contact footer h3,
+.page-contact footer h4 {
+    color: var(--beige-clair);
+}
+
+.page-contact footer a {
+    color: var(--beige-tres-clair);
+}
+
+.page-contact footer a:hover {
+    color: var(--beige-moyen);
+}
+
+.page-contact footer .footer-stat-item strong {
+    color: var(--beige-moyen);
+}
+
+.page-contact .footer-description,
+.page-contact .footer-stat-item span {
+    color: var(--beige-tres-clair);
+}
+
+.page-contact .footer-contact li,
+.page-contact .footer-contact a {
+    color: var(--beige-tres-clair);
+}
+
+.page-contact .footer-contact i {
+    color: var(--beige-moyen);
+}
+
+.page-contact .footer-contact a:hover {
+    color: var(--beige-clair);
+}
+
+.page-contact .footer-bottom p,
+.page-contact .footer-credit {
+    color: var(--beige-tres-clair);
+}
+
+.page-contact .footer-bottom {
+    border-top: 1px solid rgba(212, 184, 150, 0.2);
+}
+
+.page-contact .social-links a {
+    color: var(--beige-tres-clair);
+    background: rgba(212, 184, 150, 0.1);
+}
+
+.page-contact .social-links a:hover {
+    background: var(--beige-moyen);
+    border-color: var(--beige-clair);
+    color: var(--marron-tres-fonce);
+    box-shadow: 0 6px 20px rgba(107, 68, 35, 0.3);
 }
