@@ -8,13 +8,13 @@
    =================================== */
 
 :root {
-    /* Marrons - Usage intelligent */
-    --marron-tres-fonce: #2C1810;
-    --marron-fonce: #4A2F1A;
-    --marron-moyen: #6B4423;
-    --marron-clair: #8B5A3C;
+    /* Marrons - Adoucis (Option C) */
+    --marron-tres-fonce: #3D2E25;
+    --marron-fonce: #5C4839;
+    --marron-moyen: #7B614D;
+    --marron-clair: #9A7A61;
 
-    /* Beiges - Usage intelligent */
+    /* Beiges - Inchangés */
     --beige-tres-clair: #F5EFE7;
     --beige-clair: #E8D5BF;
     --beige-moyen: #D4B896;
