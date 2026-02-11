@@ -848,6 +848,8 @@
 
     .results-section .slider-container {
         overflow: hidden;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
     }
 
     /* Même comportement que le slider "Ils nous font confiance" : simple et fluide */
@@ -855,7 +857,7 @@
         gap: 1rem;
         padding: 0 1rem;
         padding-bottom: 1rem;
-        scroll-padding: 0 1rem;
+        scroll-padding-inline: 1rem;
         touch-action: pan-x;
         box-sizing: border-box;
         -webkit-overflow-scrolling: touch;
@@ -863,10 +865,11 @@
         -ms-overflow-style: none;
     }
 
+    /* Une carte = toute la largeur visible (une seule carte à la fois au scroll) */
     .results-section .result-card {
-        width: 100%;
-        min-width: 100%;
-        max-width: 100%;
+        width: calc(100vw - 2rem);
+        min-width: calc(100vw - 2rem);
+        max-width: calc(100vw - 2rem);
         flex-shrink: 0;
         scroll-snap-align: start;
         box-sizing: border-box;
@@ -886,6 +889,7 @@
     /* Réduire espace entre "Mes Résultats" et "Pourquoi Olèle System" */
     .results-section {
         padding-bottom: 2rem;
+        overflow-x: hidden;
     }
 
     .why-me {
@@ -965,14 +969,14 @@
     }
 
     .results-section .result-card {
-        width: 100%;
-        min-width: 100%;
-        max-width: 100%;
+        width: calc(100vw - 2rem);
+        min-width: calc(100vw - 2rem);
+        max-width: calc(100vw - 2rem);
     }
 
     .results-section .slider {
         padding: 0 0.75rem;
-        scroll-padding: 0 0.75rem;
+        scroll-padding-inline: 0.75rem;
     }
 
     .results-authenticity-note {
