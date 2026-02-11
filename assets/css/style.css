@@ -865,11 +865,11 @@
         -ms-overflow-style: none;
     }
 
-    /* Une carte = toute la largeur visible (une seule carte à la fois au scroll) */
+    /* Une carte = largeur visible avec léger espace à gauche et à droite */
     .results-section .result-card {
-        width: calc(100vw - 2rem);
-        min-width: calc(100vw - 2rem);
-        max-width: calc(100vw - 2rem);
+        width: calc(100vw - 3rem);
+        min-width: calc(100vw - 3rem);
+        max-width: calc(100vw - 3rem);
         flex-shrink: 0;
         scroll-snap-align: start;
         box-sizing: border-box;
@@ -969,9 +969,9 @@
     }
 
     .results-section .result-card {
-        width: calc(100vw - 2rem);
-        min-width: calc(100vw - 2rem);
-        max-width: calc(100vw - 2rem);
+        width: calc(100vw - 3rem);
+        min-width: calc(100vw - 3rem);
+        max-width: calc(100vw - 3rem);
     }
 
     .results-section .slider {
