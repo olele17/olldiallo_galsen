@@ -855,9 +855,9 @@
     /* Même comportement que le slider "Ils nous font confiance" : simple et fluide */
     .results-section .slider {
         gap: 1rem;
-        padding: 0 2rem;
+        padding: 0 2.5rem;
         padding-bottom: 1rem;
-        scroll-padding-inline: 2rem;
+        scroll-padding-inline: 2.5rem;
         touch-action: pan-x;
         box-sizing: border-box;
         -webkit-overflow-scrolling: touch;
@@ -865,11 +865,11 @@
         -ms-overflow-style: none;
     }
 
-    /* Une carte = largeur visible, 2rem à gauche et à droite, centrée */
+    /* Une carte = largeur réduite, bien dégagée à gauche et à droite, centrée */
     .results-section .result-card {
-        width: calc(100vw - 4rem);
-        min-width: calc(100vw - 4rem);
-        max-width: calc(100vw - 4rem);
+        width: calc(100vw - 5rem);
+        min-width: calc(100vw - 5rem);
+        max-width: calc(100vw - 5rem);
         flex-shrink: 0;
         scroll-snap-align: center;
         box-sizing: border-box;
@@ -969,14 +969,14 @@
     }
 
     .results-section .result-card {
-        width: calc(100vw - 4rem);
-        min-width: calc(100vw - 4rem);
-        max-width: calc(100vw - 4rem);
+        width: calc(100vw - 5rem);
+        min-width: calc(100vw - 5rem);
+        max-width: calc(100vw - 5rem);
     }
 
     .results-section .slider {
-        padding: 0 2rem;
-        scroll-padding-inline: 2rem;
+        padding: 0 2.5rem;
+        scroll-padding-inline: 2.5rem;
     }
 
     .results-authenticity-note {
