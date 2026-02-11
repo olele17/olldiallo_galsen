@@ -27,21 +27,19 @@
     --gris-fonce: #3A3A3A;
 }
 
-/* ===== HERO PROFIL ===== */
+/* ===== HERO PROFIL (cercles animés) ===== */
 .profile-hero {
     min-height: 50vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--marron-fonce) 0%, var(--marron-tres-fonce) 50%, var(--marron-moyen) 100%);
+    position: relative;
+    overflow: hidden;
     padding-top: calc(80px + var(--spacing-lg));
     padding-bottom: var(--spacing-xl);
     padding-left: 5%;
     padding-right: 5%;
     margin-top: 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+    background: linear-gradient(135deg, var(--marron-fonce) 0%, var(--marron-tres-fonce) 50%, var(--marron-moyen) 100%);
 }
 
 .profile-hero::before {
@@ -52,27 +50,101 @@
     width: 100%;
     height: 100%;
     background-image:
-        radial-gradient(circle at 20% 50%, rgba(107, 68, 35, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(107, 68, 35, 0.15) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(107, 68, 35, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 85% 70%, rgba(107, 68, 35, 0.08) 0%, transparent 40%);
     pointer-events: none;
+    z-index: 0;
 }
 
-.profile-hero h1 {
+/* Cercles dispersés en arrière-plan avec animation */
+.profile-hero-circles {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.profile-hero-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--beige-clair);
+    opacity: 0.15;
+    animation: profile-hero-circle-float 18s ease-in-out infinite;
+}
+
+/* Positions et tailles variées pour chaque cercle */
+.profile-hero-circle:nth-child(1)  { left: 8%;  top: 15%; width: 40px;  height: 40px;  animation-delay: 0s;    animation-duration: 14s; }
+.profile-hero-circle:nth-child(2)  { left: 25%; top: 8%;  width: 24px;  height: 24px;  animation-delay: -2s;   animation-duration: 20s; }
+.profile-hero-circle:nth-child(3)  { left: 45%; top: 25%; width: 56px;  height: 56px;  animation-delay: -4s;   animation-duration: 16s; }
+.profile-hero-circle:nth-child(4)  { left: 70%; top: 12%; width: 32px;  height: 32px;  animation-delay: -1s;   animation-duration: 22s; }
+.profile-hero-circle:nth-child(5)  { left: 88%; top: 35%; width: 48px;  height: 48px;  animation-delay: -6s;   animation-duration: 15s; }
+.profile-hero-circle:nth-child(6)  { left: 15%; top: 55%; width: 28px;  height: 28px;  animation-delay: -3s;   animation-duration: 19s; }
+.profile-hero-circle:nth-child(7)  { left: 55%; top: 60%; width: 44px;  height: 44px;  animation-delay: -5s;   animation-duration: 17s; }
+.profile-hero-circle:nth-child(8)  { left: 82%; top: 70%; width: 36px;  height: 36px;  animation-delay: -8s;   animation-duration: 21s; }
+.profile-hero-circle:nth-child(9)  { left: 5%;  top: 78%; width: 52px;  height: 52px;  animation-delay: -7s;   animation-duration: 13s; }
+.profile-hero-circle:nth-child(10) { left: 35%; top: 82%; width: 20px;  height: 20px;  animation-delay: -9s;   animation-duration: 18s; }
+.profile-hero-circle:nth-child(11) { left: 62%; top: 18%; width: 30px;  height: 30px;  animation-delay: -10s;  animation-duration: 16s; }
+.profile-hero-circle:nth-child(12) { left: 92%; top: 55%; width: 26px;  height: 26px;  animation-delay: -11s;  animation-duration: 14s; }
+.profile-hero-circle:nth-child(13) { left: 18%; top: 38%; width: 38px;  height: 38px;  animation-delay: -12s;  animation-duration: 20s; }
+.profile-hero-circle:nth-child(14) { left: 78%; top: 48%; width: 22px;  height: 22px;  animation-delay: -4s;   animation-duration: 19s; }
+.profile-hero-circle:nth-child(15) { left: 42%; top: 72%; width: 46px;  height: 46px;  animation-delay: -6s;   animation-duration: 15s; }
+.profile-hero-circle:nth-child(16) { left: 2%;  top: 42%; width: 34px;  height: 34px;  animation-delay: -13s;  animation-duration: 17s; }
+.profile-hero-circle:nth-child(17) { left: 50%; top: 5%;  width: 28px;  height: 28px;  animation-delay: -14s;  animation-duration: 21s; }
+.profile-hero-circle:nth-child(18) { left: 95%; top: 82%; width: 42px;  height: 42px;  animation-delay: -15s;  animation-duration: 13s; }
+.profile-hero-circle:nth-child(19) { left: 28%; top: 62%; width: 50px;  height: 50px;  animation-delay: -5s;   animation-duration: 18s; }
+.profile-hero-circle:nth-child(20) { left: 72%; top: 28%; width: 26px;  height: 26px;  animation-delay: -8s;   animation-duration: 22s; }
+
+@keyframes profile-hero-circle-float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25%      { transform: translate(12px, -15px) scale(1.05); }
+    50%      { transform: translate(-8px, 10px) scale(0.98); }
+    75%      { transform: translate(15px, 8px) scale(1.02); }
+}
+
+.profile-hero-inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.profile-hero-content {
+    max-width: 480px;
+    text-align: left;
+}
+
+.profile-hero-content h1 {
     color: var(--blanc);
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
     margin-bottom: var(--spacing-md);
-    position: relative;
-    z-index: 1;
 }
 
-.profile-hero p {
+.profile-hero-accent {
+    color: var(--beige-clair);
+}
+
+.profile-hero-content p {
     color: rgba(255, 255, 255, 0.95);
     font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-    max-width: 700px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Hero Profil — mobile : texte centré */
+@media (max-width: 768px) {
+    .profile-hero {
+        min-height: 45vh;
+    }
+    .profile-hero-content {
+        text-align: center;
+        max-width: none;
+        margin: 0 auto;
+    }
+    /* Cercles un peu plus discrets sur mobile */
+    .profile-hero-circle {
+        opacity: 0.12;
+    }
 }
 
 /* ===== SECTIONS COMMUNES ===== */
@@ -1103,6 +1175,10 @@
 
 .page-profil footer h3,
 .page-profil footer h4 {
+    color: var(--beige-clair);
+}
+
+.page-profil .footer-tagline {
     color: var(--beige-clair);
 }
 

@@ -53,6 +53,59 @@
         radial-gradient(circle at 20% 50%, rgba(107, 68, 35, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(107, 68, 35, 0.15) 0%, transparent 50%);
     pointer-events: none;
+    z-index: 0;
+}
+
+/* Courbe de croissance en arrière-plan */
+.resultats-hero-curve {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 55%;
+    z-index: 0;
+    pointer-events: none;
+    color: var(--beige-clair);
+}
+
+.resultats-hero-curve-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.resultats-hero-curve-path {
+    opacity: 0.28;
+    animation: resultats-hero-curve-pulse 4s ease-in-out infinite;
+}
+
+/* Points de données sur la courbe */
+.resultats-hero-curve-dots {
+    fill: var(--beige-clair);
+}
+
+.resultats-hero-curve-dot {
+    opacity: 0.38;
+}
+
+/* Marqueur au sommet (pic de résultats) */
+.resultats-hero-curve-peak {
+    opacity: 0.6;
+    filter: drop-shadow(0 0 6px rgba(232, 213, 191, 0.35));
+}
+
+@keyframes resultats-hero-curve-pulse {
+    0%, 100% { opacity: 0.24; }
+    50%      { opacity: 0.32; }
+}
+
+.resultats-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.resultats-hero-accent {
+    color: var(--beige-clair);
 }
 
 .resultats-hero h1 {
@@ -316,6 +369,22 @@
         min-height: 40vh;
         padding: var(--spacing-lg) var(--spacing-md);
         padding-top: calc(80px + var(--spacing-md));
+    }
+
+    .resultats-hero-curve {
+        height: 50%;
+    }
+
+    .resultats-hero-curve-path {
+        opacity: 0.22;
+    }
+
+    .resultats-hero-curve-dot {
+        opacity: 0.32;
+    }
+
+    .resultats-hero-curve-peak {
+        opacity: 0.5;
     }
     
     .resultats-hero h1 {
@@ -678,6 +747,10 @@
 
 .page-resultats footer h3,
 .page-resultats footer h4 {
+    color: var(--beige-clair);
+}
+
+.page-resultats .footer-tagline {
     color: var(--beige-clair);
 }
 

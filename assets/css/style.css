@@ -110,6 +110,16 @@
     animation: slideUp 0.8s ease 0.2s both;
 }
 
+.hero-slogan {
+    color: var(--beige-clair);
+    font-size: clamp(1.1rem, 2.8vw, 1.35rem);
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: var(--spacing-md);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.8s ease 0.35s both;
+}
+
 @keyframes slideUp {
     from {
         opacity: 0;
@@ -677,25 +687,25 @@
 /* CTA Final - Responsive */
 @media (max-width: 768px) {
     .cta-final {
-        padding: var(--spacing-lg) 1.5rem;
+        padding: 1.5rem 1.5rem;
         box-sizing: border-box;
     }
 
     .cta-final h2 {
         font-size: 1.5rem;
         line-height: 1.4;
-        margin-bottom: 1.25rem;
+        margin-bottom: 0.75rem;
         letter-spacing: 0.02em;
     }
 
     .cta-final p {
         font-size: 1.1rem;
         line-height: 1.7;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     .cta-final .btn {
-        padding: 1.1rem 1.5rem;
+        padding: 0.75rem 1.5rem;
         font-size: 0.9rem;
         white-space: normal;
         min-width: 240px;
@@ -710,21 +720,23 @@
 
 @media (max-width: 480px) {
     .cta-final {
-        padding: var(--spacing-lg) 1rem;
+        padding: 1.25rem 1rem;
     }
 
     .cta-final h2 {
         font-size: 1.35rem;
         line-height: 1.4;
+        margin-bottom: 0.6rem;
     }
 
     .cta-final p {
         font-size: 1.05rem;
         line-height: 1.7;
+        margin-bottom: 0.85rem;
     }
 
     .cta-final .btn {
-        padding: 1rem 1.4rem;
+        padding: 0.65rem 1.25rem;
         font-size: 0.875rem;
         min-width: 220px;
         max-width: 280px;
@@ -1176,6 +1188,38 @@
         margin-top: -1rem;
     }
 
+    /* Page accueil : resserrer encore les sections sur mobile */
+    #accueil .community-header {
+        padding-top: 1.25rem;
+        margin-bottom: 1.25rem;
+    }
+    #accueil .stats-grid {
+        margin: 1.25rem 0;
+    }
+    #accueil .profile-intro-section {
+        padding: 1.75rem var(--spacing-md);
+        margin: 1.25rem 0;
+    }
+    #accueil .results-section {
+        padding: 1.75rem 0;
+        margin: 1.25rem 0;
+    }
+    #accueil .why-me {
+        padding: 1.75rem var(--spacing-md);
+    }
+    #accueil .testimonials-section {
+        padding: 1.5rem 0 0.75rem;
+        margin: 1.25rem 0;
+    }
+    #accueil .faq-section {
+        padding: 1.5rem 0;
+        margin: 1.25rem 0;
+    }
+    #accueil .cta-final {
+        padding: 1.25rem 1rem;
+        margin: 1.25rem 0;
+    }
+
     /* Correction 2 : Réduire espace entre titre et slider */
 
     /* Correction 2 : Réduire espace entre titre et slider */
@@ -1493,6 +1537,96 @@
     color: var(--gris-fonce);
 }
 
+/* ===== PAGE ACCUEIL : réduction des hauteurs entre sections (desktop + mobile) ===== */
+#accueil .community-header {
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+#accueil .stats-grid {
+    margin: 2rem 0;
+}
+
+#accueil .profile-intro-section {
+    padding: 2.5rem var(--spacing-md);
+    margin: 2rem 0;
+}
+
+#accueil .profile-intro-title {
+    margin-bottom: 1.25rem;
+}
+
+#accueil .profile-intro-content {
+    gap: var(--spacing-sm);
+}
+
+#accueil .results-section {
+    padding: 2.5rem 0;
+    margin: 2rem 0;
+}
+
+#accueil .results-section h2 {
+    margin-bottom: 1rem;
+}
+
+#accueil .results-section .swipe-hint {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#accueil .slider-container {
+    padding: 1rem 0;
+}
+
+#accueil .slider {
+    padding: var(--spacing-sm) var(--spacing-lg);
+}
+
+#accueil .results-authenticity-note {
+    margin-top: 1.5rem;
+}
+
+#accueil .why-me {
+    padding: 2.5rem var(--spacing-md);
+}
+
+#accueil .why-me h2 {
+    margin-bottom: 1.5rem;
+}
+
+#accueil .testimonials-section {
+    padding: 2.5rem 0;
+    margin: 2rem 0;
+}
+
+#accueil .testimonials-header {
+    margin-bottom: 1.5rem;
+    padding-top: 0.75rem;
+}
+
+#accueil .testimonials-slider-container {
+    padding: var(--spacing-sm) 0;
+}
+
+#accueil .testimonials-section .swipe-hint {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#accueil .faq-section {
+    padding: 2.5rem 0;
+    margin: 2rem 0;
+}
+
+#accueil .faq-header {
+    margin-bottom: 1.5rem;
+}
+
+#accueil .cta-final {
+    padding: 2.5rem;
+    margin: 2rem 0;
+}
+
 /* FAQ - contraste */
 #accueil .faq-item {
     border-color: rgba(212, 184, 150, 0.35);
@@ -1533,6 +1667,10 @@
 
 .page-accueil footer h3,
 .page-accueil footer h4 {
+    color: var(--beige-clair);
+}
+
+.page-accueil .footer-tagline {
     color: var(--beige-clair);
 }
 

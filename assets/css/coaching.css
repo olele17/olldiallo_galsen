@@ -52,6 +52,50 @@
         radial-gradient(circle at 20% 50%, rgba(107, 68, 35, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(107, 68, 35, 0.15) 0%, transparent 50%);
     pointer-events: none;
+    z-index: 0;
+}
+
+/* Duo coach–client : deux cercles qui se chevauchent */
+.coaching-hero-duo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 220px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.coaching-hero-duo-circle {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: var(--beige-clair);
+    opacity: 0.22;
+}
+
+.coaching-hero-duo-circle-left {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.coaching-hero-duo-circle-right {
+    right: 0;
+    left: auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.coaching-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.coaching-hero-accent {
+    color: var(--beige-clair);
 }
 
 .coaching-hero h1 {
@@ -78,6 +122,17 @@
         min-height: 40vh;
         padding: var(--spacing-lg) var(--spacing-md);
         padding-top: calc(80px + var(--spacing-md));
+    }
+
+    .coaching-hero-duo {
+        width: 260px;
+        height: 180px;
+    }
+
+    .coaching-hero-duo-circle {
+        width: 180px;
+        height: 180px;
+        opacity: 0.2;
     }
     
     .coaching-hero h1 {
@@ -835,6 +890,10 @@
 
 .page-coaching footer h3,
 .page-coaching footer h4 {
+    color: var(--beige-clair);
+}
+
+.page-coaching .footer-tagline {
     color: var(--beige-clair);
 }
 

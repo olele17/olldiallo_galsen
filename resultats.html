@@ -41,7 +41,10 @@
         <a href="index.html" class="logo-link" aria-label="Retour à l'accueil">
             <div class="logo">
                 <span class="logo-badge">🐐</span>
-                <span class="logo-text"><span class="logo-highlight">Olèle</span> Systems</span>
+                <div class="logo-brand">
+                    <span class="logo-text"><span class="logo-highlight">Olèle</span> Systems</span>
+                    <span class="logo-tagline">Nous formons, Vous réussissez !</span>
+                </div>
             </div>
         </a>
         
@@ -64,10 +67,22 @@
     <!-- ===== CONTENU PRINCIPAL ===== -->
     <main>
         
-        <!-- ===== HERO SECTION ===== -->
+        <!-- ===== HERO SECTION (courbe de croissance) ===== -->
         <section class="resultats-hero">
-            <div class="container">
-                <h1>Nos <span style="color: var(--beige-clair);">Résultats</span></h1>
+            <div class="resultats-hero-curve" aria-hidden="true">
+                <svg class="resultats-hero-curve-svg" viewBox="0 0 400 100" preserveAspectRatio="none" aria-hidden="true">
+                    <path class="resultats-hero-curve-path" d="M 0 85 Q 80 70 160 50 T 320 25 T 400 10" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                    <g class="resultats-hero-curve-dots">
+                        <circle class="resultats-hero-curve-dot" cx="30" cy="80" r="3.5"/>
+                        <circle class="resultats-hero-curve-dot" cx="110" cy="62" r="3.5"/>
+                        <circle class="resultats-hero-curve-dot" cx="190" cy="43" r="3.5"/>
+                        <circle class="resultats-hero-curve-dot" cx="290" cy="20" r="3.5"/>
+                        <circle class="resultats-hero-curve-dot resultats-hero-curve-peak" cx="395" cy="10" r="5.5"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="container resultats-hero-content">
+                <h1>Nos <span class="resultats-hero-accent">Résultats</span></h1>
                 <p>Découvrez les performances réelles et authentiques de nos entrepreneurs accompagnés</p>
             </div>
         </section>
@@ -102,11 +117,11 @@
                                 <div class="resultat-stats">
                                     <div class="stat-item">
                                         <i class="fas fa-shopping-cart"></i>
-                                        <span>2,4M FCFA</span>
+                                        <span>27M FCFA</span>
                                     </div>
                                     <div class="stat-item">
                                         <i class="fas fa-box"></i>
-                                        <span>148 commandes</span>
+                                        <span>+ 1500 commandes</span>
                                     </div>
                                 </div>
                             </div>
@@ -126,11 +141,11 @@
                                 <div class="resultat-stats">
                                     <div class="stat-item">
                                         <i class="fas fa-shopping-cart"></i>
-                                        <span>3,8M FCFA</span>
+                                        <span>19M FCFA</span>
                                     </div>
                                     <div class="stat-item">
                                         <i class="fas fa-box"></i>
-                                        <span>215 commandes</span>
+                                        <span>435 commandes</span>
                                     </div>
                                 </div>
                             </div>
@@ -198,11 +213,11 @@
                                 <div class="resultat-stats">
                                     <div class="stat-item">
                                         <i class="fas fa-shopping-cart"></i>
-                                        <span>8,5M FCFA</span>
+                                        <span>15M FCFA</span>
                                     </div>
                                     <div class="stat-item">
                                         <i class="fas fa-box"></i>
-                                        <span>520 commandes</span>
+                                        <span>+ 700 commandes</span>
                                     </div>
                                 </div>
                             </div>
@@ -254,6 +269,7 @@
             <!-- Colonne 1 : À propos -->
             <div class="footer-column">
                 <h3>Olèle Systems</h3>
+                <p class="footer-tagline">Nous formons, Vous réussissez !</p>
                 <p class="footer-description">
                     Expert E-commerce et Développeur Web spécialisé dans la création de boutiques en ligne performantes et la formation d'entrepreneurs africains.
                 </p>
