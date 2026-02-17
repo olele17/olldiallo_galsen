@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- Page d'accueil -->
+    <url>
+        <loc>https://www.olesystem.com/</loc>
+        <lastmod>2026-02-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Page Profil -->
+    <url>
+        <loc>https://www.olesystem.com/profil.html</loc>
+        <lastmod>2026-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Page Formations -->
+    <url>
+        <loc>https://www.olesystem.com/formations.html</loc>
+        <lastmod>2026-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Page Coaching -->
+    <url>
+        <loc>https://www.olesystem.com/coaching.html</loc>
+        <lastmod>2026-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Page Résultats -->
+    <url>
+        <loc>https://www.olesystem.com/resultats.html</loc>
+        <lastmod>2026-02-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Page Contact -->
+    <url>
+        <loc>https://www.olesystem.com/contact.html</loc>
+        <lastmod>2026-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+</urlset>

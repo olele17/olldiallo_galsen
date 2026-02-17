@@ -1,0 +1,25 @@
+# robots.txt pour Olèle System
+# https://www.olesystem.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.olesystem.com/sitemap.xml
+
+# Désactiver l'indexation des fichiers système et dossiers privés (si applicable)
+Disallow: /assets/js/
+Disallow: /assets/css/
+Disallow: /*.json$
+Disallow: /*.md$
+
+# Autoriser l'indexation des images
+Allow: /assets/images/
+
+# Autoriser l'indexation des pages principales
+Allow: /index.html
+Allow: /profil.html
+Allow: /formations.html
+Allow: /coaching.html
+Allow: /resultats.html
+Allow: /contact.html
