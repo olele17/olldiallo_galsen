@@ -233,7 +233,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center;
     transition: transform var(--transition-slow);
+}
+
+/* Carte Multi-boutiques (15M) : priorité au haut de l'image pour afficher les chiffres */
+.resultat-image--show-top img {
+    object-position: center top;
 }
 
 .resultat-card:hover .resultat-image img {
