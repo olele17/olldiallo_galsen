@@ -443,11 +443,18 @@
     }
     
     .authenticite-content {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-lg) 1.25rem;
+        max-width: 96%;
     }
     
     .authenticite-content h3 {
         font-size: 1.5rem;
+    }
+    
+    .authenticite-content p {
+        font-size: 1.1rem;
+        line-height: 1.85;
+        max-width: 100%;
     }
 }
 
@@ -475,6 +482,16 @@
     
     .resultat-description {
         font-size: 0.8rem;
+    }
+    
+    .authenticite-content {
+        padding: var(--spacing-md) 1rem;
+        max-width: 98%;
+    }
+    
+    .authenticite-content p {
+        font-size: 1.05rem;
+        line-height: 1.8;
     }
 }
 
