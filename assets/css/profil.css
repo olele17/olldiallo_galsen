@@ -776,6 +776,10 @@
     background: linear-gradient(135deg, #405de6, #e1306c, #fd1d1d, #f77737);
 }
 
+.social-platform-card.snapchat:hover .platform-icon {
+    background: linear-gradient(135deg, #FFFC00, #fff200);
+}
+
 .social-platform-card.youtube:hover .platform-icon {
     background: linear-gradient(135deg, #FF0000, #c4302b);
 }
