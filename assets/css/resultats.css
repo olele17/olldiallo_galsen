@@ -442,9 +442,14 @@
         line-height: 1.55;
     }
     
+    .authenticite-section .container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
     .authenticite-content {
-        padding: var(--spacing-lg) 1.25rem;
-        max-width: 96%;
+        padding: var(--spacing-lg) 0.75rem;
+        max-width: 100%;
     }
     
     .authenticite-content h3 {
@@ -452,9 +457,10 @@
     }
     
     .authenticite-content p {
-        font-size: 1.1rem;
-        line-height: 1.85;
+        font-size: 1.05rem;
+        line-height: 1.7;
         max-width: 100%;
+        text-align: left;
     }
 }
 
@@ -484,14 +490,20 @@
         font-size: 0.8rem;
     }
     
+    .authenticite-section .container {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
     .authenticite-content {
-        padding: var(--spacing-md) 1rem;
-        max-width: 98%;
+        padding: var(--spacing-md) 0.5rem;
+        max-width: 100%;
     }
     
     .authenticite-content p {
-        font-size: 1.05rem;
-        line-height: 1.8;
+        font-size: 1rem;
+        line-height: 1.65;
+        text-align: left;
     }
 }
 
